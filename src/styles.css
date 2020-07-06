@@ -66,6 +66,9 @@ width: 100vw;
 perspective: 600px;
 }
 
+#header{
+    transition: background 500ms;
+}
 
 
 @media only screen and (max-width: 500px) {

@@ -88,6 +88,7 @@ resizeSubscription$: Subscription
   screenHeight:any
   scale ='';
   scale2 = '';
+  scrolled=false
 
   showmodalbtngroup;
   ngOnInit(){
@@ -98,6 +99,16 @@ resizeSubscription$: Subscription
     setTimeout(() => {
       this.SF();
     }, 200);
+
+    window.onscroll = (e)=>{
+      let s = window.pageYOffset;
+      if(s > 50){
+        this.scrolled = true
+      }else{
+        this.scrolled= false
+      }
+   
+    }
     
     this.connector.getuibyName('ICALLIS');
     
@@ -120,10 +131,7 @@ resizeSubscription$: Subscription
 
         setTimeout(() => {
      
-          document.querySelector("#openmodal").addEventListener('click',()=>{
-            this.showmodal = true
-            document.querySelector('body').style.overflowY = 'hidden'
-          });
+        
 
           document.querySelector("#closemodal").addEventListener('click',()=>{
             this.showmodal = false
