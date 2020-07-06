@@ -105,7 +105,8 @@ resizeSubscription$: Subscription
       if(s > 50){
         this.scrolled = true
       }else{
-        this.scrolled= false
+        this.scrolled= false;
+        (<HTMLDivElement>document.querySelector('#mainpic')).style.top = `${0-1.5*s}px`
       }
    
     }
