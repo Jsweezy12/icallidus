@@ -1,19 +1,21 @@
 
 @media only screen and (max-width: 905px) {
-#normal{
+.normal{
     display: none;
 }
-#mobile{
+.mobile{
     display:block !important
 }
 
 #sucesstoryimage{
-    top:4370px
+
+    top: 5187px;
+    height: 855px;
 }
 
 }
 
-#mobile{
+.mobile{
     display:none 
 }
 

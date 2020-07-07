@@ -135,9 +135,14 @@ resizeSubscription$: Subscription
 
 
   smoothscroll(top){
-    window.scrollTo({top:top,behavior: 'smooth' });  
+    try{
+      window.scrollTo({top:top,behavior: 'smooth' });  
+    }catch(e){
+      console.log(e)
+    }
+    
 
-    // document.querySelector('#container').scrollTo({top:top,behavior: 'smooth' });  
+    //  document.querySelector('body').scrollTo(0,0);  
 }
 
   ngOnChanges(){
@@ -159,13 +164,17 @@ resizeSubscription$: Subscription
 
   SF(){
     if(this.screenWidth < 905){
-      this.scale= `scale(${this.screenWidth/900})`
+      this.scale= `scale(${this.screenWidth/450})`
+      // this.scale2=`scale(${(this.screenWidth)/590})`
     }else{
       this.scale= `scale(${this.screenWidth/1920})`
+      
     }
-    
-    console.log('scale', this.scale)
+
+
     this.scale2=`scale(${(this.screenWidth)/1918})`
+    console.log('scale', this.scale)
+    
   }
 
   
@@ -177,7 +186,6 @@ resizeSubscription$: Subscription
 }
 
 routeme(routeurl){
-  
   this.smoothscroll(0)
   console.log('routeurl')
   this.router.navigate([`/${routeurl}`])

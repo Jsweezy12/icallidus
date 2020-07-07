@@ -22,6 +22,10 @@
     width: 100vw;
 }
 
+#mainwrapper{
+    scroll-behavior: smooth;
+}
+
 body{
     overflow-x: hidden;
     margin:0px
