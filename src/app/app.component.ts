@@ -93,32 +93,18 @@ resizeSubscription$: Subscription
   showmodalbtngroup;
   ngOnInit(){
     document.querySelector('body').style.overflowY = 'scroll'
-    this.screenWidth = window.innerWidth;
+    this.screenWidth = document.querySelector('body').clientWidth;
     this.screenHeight = window.innerHeight;
-    console.log('screen size oninit',this.screenWidth,this.screenHeight)
-    setTimeout(() => {
-      this.SF();
-    }, 200);
-
-    window.onscroll = (e)=>{
-      let s = window.pageYOffset;
-      if(s > 50){
-        this.scrolled = true
-      }else{
-        this.scrolled= false;
-        (<HTMLDivElement>document.querySelector('#mainpic')).style.top = `${0-1.5*s}px`
-      }
-   
-    }
-    
+    console.log('screen size oninit',this.screenWidth,this.screenHeight);
+    this.SF();
     this.connector.getuibyName('ICALLIS');
     
 
     this.resizeObservable$ = fromEvent(window, 'resize')
     this.resizeSubscription$ = this.resizeObservable$.subscribe( evt => {
-      // Get the Screen Size
-      this.screenWidth = evt.currentTarget['innerWidth'];
-      this.SF();
+      // Get the Screen Size/ this.screenWidth = evt.currentTarget['innerWidth'];
+      this.screenWidth = document.querySelector('body').clientWidth;
+        this.SF(); 
     })
    
       this.connector.allhtml.subscribe(res=>{
@@ -158,8 +144,20 @@ resizeSubscription$: Subscription
     console.log('change')
   }
 
+  scrollCapture(e){
+    console.log(e)
+    let s = e.target.scrollTop;
+    if(s > 50){
+      this.scrolled = true
+    }else{
+      this.scrolled= false;
+      (<HTMLDivElement>document.querySelector('#mainpic')).style.top = `${0-1.5*s}px`
+    }
+ 
+  
+  }
+
   SF(){
-    console.log('I have ran')
     if(this.screenWidth < 905){
       this.scale= `scale(${this.screenWidth/900})`
     }else{
@@ -172,7 +170,10 @@ resizeSubscription$: Subscription
 
   
   ngOnDestroy() {
-    this.resizeSubscription$.unsubscribe()
+    this.resizeSubscription$.unsubscribe();
+    this.screenWidth=0
+    this.screenHeight=0;
+    this.scale=''
 }
 
 routeme(routeurl){

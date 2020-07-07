@@ -40,5 +40,6 @@
     width: 1920px; height: 1020px; position: absolute;
      top: 0px; left: 0px; background-repeat: no-repeat;
       background-attachment: scroll; background-position: right center; 
-      background-image: url("../../../assets/homeimage.png"); transition: top 500ms ease 0s;
+      background-image: url("../../../assets/homeimage.png"); 
+      transition: top 500ms ease 0s;
 }

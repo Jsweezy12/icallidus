@@ -1,5 +1,5 @@
 
-
+<div (scroll)="scrollCapture($event)" id="mainwrapper" style="width:100vw;height:100vh;overflow-x:hidden">
 <div id="header"
 *ngIf="!showmodal"
 style="
@@ -102,9 +102,11 @@ background: transparent;
 </div>
 
 
-<div class="skirt" [ngStyle]='{"width":showmodal?this.screenWidth +"px":"0vw","opacity":showmodal?"1":"0",
-"height":this.screenHeight+"px"}'>
-  <div style="transform-origin: 0px 0px;" [ngStyle]='{"transform":this.scale2}'>
+<div class="skirt" style="overflow: hidden;" [ngStyle]='{"width":showmodal?this.screenWidth +"px":"0vw","opacity":showmodal?"1":"0",
+"height":this.screenHeight+"px","height":showmodal?"100vh":"0vh"}'>
+
+
+  <div  style="transform-origin: 0px 0px;" [ngStyle]='{"transform":this.scale2}'>
 
     <div _ngcontent-nei-c3="">
       <div _ngcontent-nei-c3="" class="image svg" draggable="false"
@@ -419,5 +421,7 @@ background: transparent;
 
 
   </div>
+
+</div>
 
 </div>
