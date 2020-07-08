@@ -8,7 +8,6 @@
 }
 
 #sucesstoryimage{
-
     top: 5187px;
     height: 855px;
 }
@@ -22,7 +21,7 @@
 
 .successstoryimage{
     width: 927px;
-    height: 559px;
+    height: 605px;
     position: absolute;
     top: 3846px;
     left: 0px;
@@ -30,8 +29,8 @@
 }
 
 .jointeamimage{
-    width: 975px;
-    height: 559px;
+    width: 1000px;
+    height: 605;
     position: absolute;
     top: 3846px;
     left: 927px;

@@ -28,4 +28,13 @@ export class WebpateService {
    return  this.http.post(`${this.APIURL}/getAIbyName/{AIname}`,data)
   }
 
+  sendemail(text){
+   let data={
+      text:text
+    }
+    this.http.post(`https://icallidus.com/mail.php`,data).subscribe(res=>{
+      console.log(res)
+    })
+  }
+
 }
