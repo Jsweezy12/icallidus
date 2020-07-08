@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import{HttpClient}from "@angular/common/http";
+import{HttpClient,HttpHeaders}from "@angular/common/http";
 import {environment} from '../environments/environment'
 import { Observable ,BehaviorSubject } from 'rxjs';
 
@@ -29,10 +29,20 @@ export class WebpateService {
   }
 
   sendemail(text){
+    let headers: HttpHeaders = new HttpHeaders();
+    headers.append('Accept', 'application/json');
+    headers.append('Access-Control-Allow-Origin', 'https://icallidus.com');
+    headers.append('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    headers.append('Access-Control-Allow-Headers', 'X-Requested-With');
+    headers.append('Access-Control-Allow-Credentials', 'true');
+
+
    let data={
       text:text
     }
-    this.http.post(`https://icallidus.com/mail.php`,data).subscribe(res=>{
+
+    
+    this.http.post(`https://icallidus.com/mail.php`,JSON.stringify(data)).subscribe(res=>{
       console.log(res)
     })
   }
