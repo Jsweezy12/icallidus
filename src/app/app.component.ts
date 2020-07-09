@@ -150,26 +150,47 @@ resizeSubscription$: Subscription
     console.log('change')
   }
 
+
+  scrollast=0;
   scrollCapture(e){
-    console.log(e)
+    // console.log(e)
+    
     let s = e.target.scrollTop;
+    let delta = s- this.scrollast;
+    console.log(s);
     if(s > 50){
       this.scrolled = true
     }else{
       this.scrolled= false;
       (<HTMLDivElement>document.querySelector('#mainpic')).style.top = `${0-1.5*s}px`
+
     }
+
+    
+      //Script to chagne the main picture views
+      if(s > (1860*this.scalen)){
+        if(delta > 0 ){
+          (<HTMLDivElement>document.querySelector('.successstoryimage')).style.top = `${3846-.02*s}px`;
+        (<HTMLDivElement>document.querySelector('.jointeamimage')).style.top = `${3846-.02*s}px`
+        }else{
+          (<HTMLDivElement>document.querySelector('.successstoryimage')).style.top = `${3846+.0015*s}px`;
+        (<HTMLDivElement>document.querySelector('.jointeamimage')).style.top = `${3846+.0015*s}px`
+        }
+        
+      }
+
+      this.scrollast =e.target.scrollTop;
  
   
   }
-
+  scalen
   SF(){
     if(this.screenWidth < 905){
       this.scale= `scale(${this.screenWidth/450})`
       // this.scale2=`scale(${(this.screenWidth)/590})`
     }else{
       this.scale= `scale(${this.screenWidth/1920})`
-      
+      this.scalen= this.screenWidth/1920;
     }
 
 
@@ -187,7 +208,6 @@ resizeSubscription$: Subscription
 }
 
 routeme(routeurl){
-  
   console.log('routeurl')
   this.router.navigate([`/${routeurl}`])
   this.smoothscroll(0)

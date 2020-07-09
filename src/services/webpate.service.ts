@@ -15,7 +15,7 @@ export class WebpateService {
     let data ={
       AIname:name
     }
-    this.http.post(`${this.APIURL}/getAIbyName/{AIname}`,data).subscribe(res =>{
+    this.http.post(`${this.APIURL}/getAIByNameWeb/{AIname}`,data).subscribe(res =>{
       this.allhtml.next(res);
       console.log('ALL Page Data',this.allhtml)
     })

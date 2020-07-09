@@ -11,11 +11,15 @@ import { ContractvComponent } from './components/contractv/contractv.component';
 import { CareersComponent } from './components/careers/careers.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { SolutionsComponent } from './components/solutions/solutions.component';
-import { FooterComponent } from './components/footer/footer.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { AppmodernizationComponent } from './components/appmodernization/appmodernization.component';
+import { DigitTComponent } from './components/digit-t/digit-t.component'
 
 const ROUTES: Routes = [
   {path:'home',component:HomeComponent},
-  {path:'',component:HomeComponent},
+  {path:'',component:HomeComponent}
+  , {path:'appm',component:AppmodernizationComponent},
+  {path:'dt',component:DigitTComponent},
   {path:'aboutus',component:AboutusComponent},
   {path:'services',component:ServicespageComponent},
   {path:'contractv',component:ContractvComponent},
@@ -35,7 +39,9 @@ const ROUTES: Routes = [
     CareersComponent,
     ContactComponent,
     SolutionsComponent,
-    FooterComponent
+    FooterComponent,
+    AppmodernizationComponent,
+    DigitTComponent
   ],
   imports: [
     BrowserModule,
