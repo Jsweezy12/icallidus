@@ -276,11 +276,11 @@ height: 200vh;">
       <!--AboutDiv-->
       <div class="show_options" [ngStyle]="{'height':showmodalbtngroup == 'aboutus'?'600px':'0px'}">
         <p (click)="routeme('aboutus');showmodal = false">About iCallidus</p>
-        <p>Driving Government Forward
+        <p (click)="routeme('aboutus');showmodal = false;smoothscroll(1516)">Driving Government Forward
           And Maximizing Performance</p>
-        <p>Enterprise Solutions
+        <p (click)="routeme('aboutus');showmodal = false" >Enterprise Solutions
           For a Modernized Government</p>
-        <p>Driven by Innovative Minds</p>
+        <p (click)="routeme('aboutus');showmodal = false" >Driven by Innovative Minds</p>
       </div>
 
 
@@ -308,9 +308,9 @@ height: 200vh;">
           SOLUTIONS </label></div>
 
       <div class="show_options" [ngStyle]="{'height':showmodalbtngroup == 'solutions'?'600px':'0px'}">
-        <p>Cloud</p>
-        <p>DevSecOps</p>
-        <p>ServiceNow</p>
+        <p (click)="routeme('solutions');showmodal = false">Cloud</p>
+        <p (click)="routeme('solutions');showmodal = false">DevSecOps</p>
+        <p (click)="routeme('solutions');showmodal = false">ServiceNow</p>
       </div>
 
       <div class="modalbtnhover" (click)="showmodalbtngroup = 'cv'">

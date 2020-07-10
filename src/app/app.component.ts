@@ -136,9 +136,11 @@ resizeSubscription$: Subscription
 
 
   smoothscroll(top:number){
-    console.log('scroll called')
+    console.log('scroll called',top)
     try{
-      window.scrollTo({top:top*this.scalen,behavior: 'smooth' });  
+      let p = top*this.scalen,behavior;
+      console.log('scroll adjustent',p);
+      window.scrollTo({top:p,behavior: 'smooth' });  
     }catch(e){
       console.log(e)
     }
@@ -211,7 +213,7 @@ resizeSubscription$: Subscription
 routeme(routeurl){
   console.log('routeurl')
   this.router.navigate([`/${routeurl}`])
-  this.smoothscroll(0)
+  
 }
 
 
