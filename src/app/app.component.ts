@@ -213,7 +213,6 @@ resizeSubscription$: Subscription
 routeme(routeurl){
   console.log('routeurl')
   this.router.navigate([`/${routeurl}`])
-  
 }
 
 

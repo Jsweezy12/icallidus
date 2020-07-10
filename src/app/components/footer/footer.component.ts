@@ -12,11 +12,6 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-           
-      document.querySelector("#aboutus").addEventListener('click',()=>{
-        this.smoothscroll(0)
-        this.routeme('aboutus')
-      });
       
     }, 200);
   }
