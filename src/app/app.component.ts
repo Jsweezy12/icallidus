@@ -87,6 +87,7 @@ resizeSubscription$: Subscription
   screenWidth:any
   screenHeight:any
   scale ='';
+  scalen:number;
   scale2 = '';
   scrolled=false
 
@@ -134,10 +135,10 @@ resizeSubscription$: Subscription
 
 
 
-  smoothscroll(top){
+  smoothscroll(top:number){
     console.log('scroll called')
     try{
-      window.scrollTo({top:top,behavior: 'smooth' });  
+      window.scrollTo({top:top*this.scalen,behavior: 'smooth' });  
     }catch(e){
       console.log(e)
     }
@@ -183,7 +184,7 @@ resizeSubscription$: Subscription
  
   
   }
-  scalen
+  
   SF(){
     if(this.screenWidth < 905){
       this.scale= `scale(${this.screenWidth/450})`
