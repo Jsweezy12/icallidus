@@ -1,4 +1,20 @@
 
+
+@media only screen and (max-width: 905px) {
+    .normal{
+        display: none;
+    }
+    .mobile{
+        display:block !important
+    }
+
+    .sectioninfocontainer{
+        display:none
+    }
+
+}
+  
+
 /* Main Page Model Code*/
 .modalbtncontainer div{
 position: relative !important;

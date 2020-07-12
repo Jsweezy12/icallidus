@@ -1,0 +1,19 @@
+
+@media only screen and (max-width: 905px) {
+    .normal{
+        display: none;
+    }
+    .mobile{
+        display:block !important
+    }
+    
+    /* #sucesstoryimage{
+        top: 5187px;
+        height: 855px;
+    } */
+    
+    }
+    
+    .mobile{
+        display:none 
+    }

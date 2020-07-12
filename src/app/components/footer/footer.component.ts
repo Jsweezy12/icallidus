@@ -16,14 +16,18 @@ export class FooterComponent implements OnInit {
     }, 200);
   }
 
-  smoothscroll(p){
+ 
+
+  smoothscroll(pi){
     console.log('scroll called from footerpage')
     try{
-      // window.scrollTo({top:p,behavior: 'smooth' }); 
-      document.querySelector("#mainwrapper").scrollTo(0,0) 
+      let p = pi
+      console.log('scroll adjustent',p);
+      document.querySelector("#mainwrapper").scrollTo(0,p) 
     }catch(e){
       console.log(e)
     }
+
   }
 
   routeme(routeurl){ 

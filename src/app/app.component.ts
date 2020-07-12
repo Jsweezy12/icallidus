@@ -138,7 +138,7 @@ resizeSubscription$: Subscription
   smoothscroll(top:number){
     console.log('scroll called',top)
     try{
-      let p = top*this.scalen,behavior;
+      let p = top*this.scalen
       console.log('scroll adjustent',p);
       window.scrollTo({top:p,behavior: 'smooth' });  
     }catch(e){
@@ -173,11 +173,11 @@ resizeSubscription$: Subscription
       //Script to chagne the main picture views
       if(s > (1860*this.scalen)){
         if(delta > 0 ){
-          (<HTMLDivElement>document.querySelector('.successstoryimage')).style.top = `${3846-.02*s}px`;
-        (<HTMLDivElement>document.querySelector('.jointeamimage')).style.top = `${3846-.02*s}px`
+          (<HTMLDivElement>document.querySelector('.successstoryimage')).style.top = `${(3846-.02*s)*this.scalen}px`;
+        (<HTMLDivElement>document.querySelector('.jointeamimage')).style.top = `${(3846-.02*s)*this.scalen}px`
         }else{
-          (<HTMLDivElement>document.querySelector('.successstoryimage')).style.top = `${3846+.0015*s}px`;
-        (<HTMLDivElement>document.querySelector('.jointeamimage')).style.top = `${3846+.0015*s}px`
+          (<HTMLDivElement>document.querySelector('.successstoryimage')).style.top = `${(3846+.0015*s)*this.scalen}px`;
+        (<HTMLDivElement>document.querySelector('.jointeamimage')).style.top = `${(3846+.0015*s)*this.scalen}px`
         }
         
       }
@@ -196,8 +196,13 @@ resizeSubscription$: Subscription
       this.scalen= this.screenWidth/1920;
     }
 
-
-    this.scale2=`scale(${(this.screenWidth)/1918})`
+    let w = this.screenWidth/1918 
+    if(w > 0.4){
+      this.scale2=`scale(${(this.screenWidth)/1918})`
+    }else{
+      this.scale2 = 'scale(0.4)'
+    }
+    
     console.log('scale', this.scale)
     
   }
