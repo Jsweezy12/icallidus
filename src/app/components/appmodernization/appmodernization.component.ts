@@ -12,11 +12,13 @@ export class AppmodernizationComponent implements OnInit {
   constructor( private connector: WebpateService,
     private dom:DomSanitizer) { }
     html
+    html2
   ngOnInit() {
     this.connector.allhtml.subscribe(res=>{
       console.log(res);
       setTimeout(() => {
         this.html=this.dom.bypassSecurityTrustHtml(res[0].htmlversion11)
+        this.html2=this.dom.bypassSecurityTrustHtml(res[0].htmlversion19)
       }, 500);
       
     });
