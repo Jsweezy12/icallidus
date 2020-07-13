@@ -12,6 +12,10 @@
         display:none
     }
 
+    .modalbtncontainer{
+        left: 30%!important;
+    }
+
 }
   
 
@@ -29,7 +33,7 @@ height: 100px;
     z-index: 99;
     height: 1000px;
     top: 325px;
-    left: 257px;
+    left: 10%;
 
 }
 

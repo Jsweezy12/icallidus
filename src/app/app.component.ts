@@ -161,26 +161,76 @@ resizeSubscription$: Subscription
     let s = e.target.scrollTop;
     let delta = s- this.scrollast;
     console.log(s);
-    if(s > 50){
-      this.scrolled = true
-    }else{
-      this.scrolled= false;
-      (<HTMLDivElement>document.querySelector('#mainpic')).style.top = `${0-1.5*s}px`
 
-    }
-
-    
-      //Script to chagne the main picture views
-      if(s > (1860*this.scalen)){
-        if(delta > 0 ){
-          (<HTMLDivElement>document.querySelector('.successstoryimage')).style.top = `${(3846-.02*s)*this.scalen}px`;
-        (<HTMLDivElement>document.querySelector('.jointeamimage')).style.top = `${(3846-.02*s)*this.scalen}px`
-        }else{
-          (<HTMLDivElement>document.querySelector('.successstoryimage')).style.top = `${(3846+.0015*s)*this.scalen}px`;
-        (<HTMLDivElement>document.querySelector('.jointeamimage')).style.top = `${(3846+.0015*s)*this.scalen}px`
+    if(document.querySelector('#mainpic')){
+      if(s > 50){
+        this.scrolled = true
+      }else{
+        this.scrolled= false;
+        (<HTMLDivElement>document.querySelector('#mainpic')).style.top = `${0-1.5*s}px`
+  
+      }
+  
+      
+        //Script to chagne the main picture views
+        if(document.querySelector('.successstoryimage')){
+          if(s > (1860*this.scalen)){
+            if(delta > 0 ){
+              (<HTMLDivElement>document.querySelector('.successstoryimage')).style.top = `${(3846-.02*s)*this.scalen}px`;
+            (<HTMLDivElement>document.querySelector('.jointeamimage')).style.top = `${(3846-.02*s)*this.scalen}px`
+            }else{
+              (<HTMLDivElement>document.querySelector('.successstoryimage')).style.top = `${(3846+.0015*s)*this.scalen}px`;
+            (<HTMLDivElement>document.querySelector('.jointeamimage')).style.top = `${(3846+.0015*s)*this.scalen}px`
+            }
+            
+          }
         }
         
-      }
+    }
+
+   
+        // let h = this.scalen * 2187.306640625;
+        // console.log('h value',h)
+        if(s > (this.scalen * 2187.306640625)){
+       
+         let i =1;
+         let box_i =  document.querySelector(`.boxi${i}`) as HTMLDivElement;
+         let box_t =  document.querySelector(`.boxt${i}`) as HTMLDivElement;
+           box_i.style.marginTop= '-100px';
+           box_t.style.opacity= '1';
+          console.log(box_i)
+         
+
+
+        }
+        
+        
+        //  let box_i =  document.querySelector(`.boxi${i}`) as HTMLDivElement;
+        //  let box_t =  document.querySelector(`.boxt${i}`) as HTMLDivElement;
+        //  box_1.addEventListener('mouseover',()=>{
+        //    box_i.style.marginTop= '-100px';
+        //    box_t.style.opacity= '1';
+ 
+        //  })
+ 
+        //  box_t.addEventListener('mouseover',()=>{
+        //    box_i.style.marginTop= '-100px';
+        //    box_t.style.opacity= '1';
+ 
+        //  })
+ 
+        //  box_i.addEventListener('mouseover',()=>{
+        //    box_i.style.marginTop= '-100px';
+        //    box_t.style.opacity= '1';
+ 
+        //  })
+        //  box_1.addEventListener('mouseout',()=>{
+        //    box_i.style.marginTop= '0px';
+        //    box_t.style.opacity= '0';
+        //  })
+ 
+   
+  
 
       this.scrollast =e.target.scrollTop;
  
@@ -190,7 +240,7 @@ resizeSubscription$: Subscription
   SF(){
     if(this.screenWidth < 905){
       this.scale= `scale(${this.screenWidth/450})`
-      // this.scale2=`scale(${(this.screenWidth)/590})`
+      this.scalen= this.screenWidth/450;
     }else{
       this.scale= `scale(${this.screenWidth/1920})`
       this.scalen= this.screenWidth/1920;

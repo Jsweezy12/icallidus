@@ -7,3 +7,16 @@
     background: blue;
 }
 
+@media only screen and (max-width: 905px) {
+    .normal{
+        display: none;
+    }
+    .mobile{
+        display:block !important
+    }
+    
+    }
+    
+    .mobile{
+        display:none 
+    }
