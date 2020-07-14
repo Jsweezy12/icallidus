@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{WebpateService} from "../../../services/webpate.service";
 import {DomSanitizer} from "@angular/platform-browser"
-import { ConsoleReporter } from 'jasmine';
 @Component({
   selector: 'app-solutions',
   templateUrl: './solutions.component.html',
