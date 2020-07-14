@@ -12,13 +12,46 @@ export class ContractvComponent implements OnInit {
  
   constructor( private connector: WebpateService,
     private dom:DomSanitizer) { }
-    html
+    html;
+    selected="gsa1"
   ngOnInit() {
     this.connector.allhtml.subscribe(res=>{
       console.log(res);
       setTimeout(() => {
-        this.html=this.dom.bypassSecurityTrustHtml(res[0].htmlversion12)
+        new Promise((reslove,reject)=>{
+          try{
+            this.html=this.dom.bypassSecurityTrustHtml(res[0].htmlversion12);
+          }catch(e){
+            console.log(e)
+          }
+          
+          return reslove('done')
+
+        }).then((r)=>{
+          console.log('afterran',r);
+            
+          console.log('ran')
+          setTimeout(() => {
+            for(let v=1;v<5;v++){
+              let buttons = document.querySelectorAll(`.gsa${v}`);
+              console.log(buttons)
+              let id = `gsa${v}`
+              buttons.forEach(button=>{
+              button.addEventListener('click',()=>{
+                this.selected = id;
+                console.log(this.selected)
+              })
+          }) 
+            }
+           
+          }, 500);
+          
+          
+        })
+        
       }, 500);
+
+      
       
     });
 

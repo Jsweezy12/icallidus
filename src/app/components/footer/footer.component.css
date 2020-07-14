@@ -16,3 +16,14 @@
     .ailabel:hover{
         cursor: pointer;
     }
+
+    .iC_footer{
+        font-size: 48px;
+        font-weight: 1000;
+        color: white;
+        position: absolute;
+        top: 189px;
+        left: 858px;
+        z-index: 99;
+        
+    }

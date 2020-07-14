@@ -1,0 +1,8 @@
+.selectionscontent{
+    position: absolute;
+    top: 1300px;
+    left: 50px;
+    z-index: 99;
+    height: 1200px;
+    width: 1850px;
+}

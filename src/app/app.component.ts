@@ -16,6 +16,9 @@ export class AppComponent {
   resizeObservable$: Observable<Event>
 resizeSubscription$: Subscription
   
+
+approute;
+
 	// I initialize the app component.
   constructor( private router: Router, private connector: WebpateService,
     private dom:DomSanitizer) {
@@ -41,7 +44,8 @@ resizeSubscription$: Subscription
 					// navigations are really just "roll forward" navigations that get
 					// a new, unique ID.
 					console.log( "navigation id:", event.id );
-					console.log( "route:", event.url );
+          console.log( "route:", event.url );
+          this.approute = event.url;
 					// The "navigationTrigger" will be one of:
 					// --
 					// - imperative (ie, user clicked a link).
@@ -189,45 +193,52 @@ resizeSubscription$: Subscription
     }
 
    
-        // let h = this.scalen * 2187.306640625;
-        // console.log('h value',h)
-        if(s > (this.scalen * 2187.306640625)){
-       
-         let i =1;
-         let box_i =  document.querySelector(`.boxi${i}`) as HTMLDivElement;
-         let box_t =  document.querySelector(`.boxt${i}`) as HTMLDivElement;
-           box_i.style.marginTop= '-100px';
-           box_t.style.opacity= '1';
-          console.log(box_i)
-         
-
-
+        if(this.approute =='solutions'){
+          if(s > (this.scalen * 2000.306640625)){
+            activatemove(1)
+           
+          }
+  
+          if(s > (this.scalen * 2500.306640625)){
+            activatemove(2)
+            
+           }
+  
+           if(s > (this.scalen * 3000.306640625)){
+            activatemove(3)
+            
+           }
+  
+           if(s > (this.scalen * 3500.306640625)){
+            activatemove(4)
+            
+           }
+          if(s <(this.scalen * 2000.306640625) ){
+            returnall(5);
+           
+          }
         }
-        
-        
-        //  let box_i =  document.querySelector(`.boxi${i}`) as HTMLDivElement;
-        //  let box_t =  document.querySelector(`.boxt${i}`) as HTMLDivElement;
-        //  box_1.addEventListener('mouseover',()=>{
-        //    box_i.style.marginTop= '-100px';
-        //    box_t.style.opacity= '1';
- 
-        //  })
- 
-        //  box_t.addEventListener('mouseover',()=>{
-        //    box_i.style.marginTop= '-100px';
-        //    box_t.style.opacity= '1';
- 
-        //  })
- 
-        //  box_i.addEventListener('mouseover',()=>{
-        //    box_i.style.marginTop= '-100px';
-        //    box_t.style.opacity= '1';
- 
-        //  })
-        //  box_1.addEventListener('mouseout',()=>{
-        //    box_i.style.marginTop= '0px';
-        //    box_t.style.opacity= '0';
-        //  })
+       
+
+
+
+        function returnall(p){
+          for(var i= 1; i <5;i++){
+            if(i != p){
+            let box_i =  document.querySelectorAll(`.boxi${i}`)[1] as HTMLDivElement;
+            let box_t =  document.querySelectorAll(`.boxt${i}`)[1] as HTMLDivElement;
+            box_i.style.marginTop= '0px';
+            box_t.style.opacity= '0';
+            }
+            
+          }
+        }
+
+        function activatemove(i){
+          let box_1 =document.querySelectorAll(`.box${i}`)[1] as HTMLDivElement;
+          box_1.click();
+        }
+
  
    
   

@@ -1,0 +1,17 @@
+@media only screen and (max-width: 905px) {
+    .normal{
+        display: none;
+    }
+    .mobile{
+        display:block !important
+    }
+
+    .sectioninfocontainer{
+        display:none
+    }
+
+    .modalbtncontainer{
+        left: 30%!important;
+    }
+
+}

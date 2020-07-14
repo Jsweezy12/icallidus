@@ -10,11 +10,15 @@ export class FooterComponent implements OnInit {
 
   constructor(private router: Router,) { }
 
+  routename;
   ngOnInit() {
-    setTimeout(() => {
-      
-    }, 200);
+  //script to get courrent route
+  this.routename =  this.router.url;
+  console.log(this.routename)
+
+
   }
+ 
 
  
 

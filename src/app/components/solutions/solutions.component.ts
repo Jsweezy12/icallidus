@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{WebpateService} from "../../../services/webpate.service";
 import {DomSanitizer} from "@angular/platform-browser"
+import { ConsoleReporter } from 'jasmine';
 @Component({
   selector: 'app-solutions',
   templateUrl: './solutions.component.html',
@@ -26,7 +27,9 @@ export class SolutionsComponent implements OnInit {
                 box_i.style.marginTop= '-100px';
                 box_t.style.opacity= '1';
       
-              })
+              });
+
+              
       
               box_t.addEventListener('mouseover',()=>{
                 box_i.style.marginTop= '-100px';
@@ -62,6 +65,25 @@ export class SolutionsComponent implements OnInit {
 
   }
 
+   clicked(i){
+     console.log('clicked',i)
+    let box_i =  document.querySelectorAll(`.boxi${i}`)[1] as HTMLDivElement;
+    let box_t =  document.querySelectorAll(`.boxt${i}`)[1] as HTMLDivElement;
+    box_i.style.marginTop= '-100px';
+    box_t.style.opacity= '1';
+
+
+   }
+
+   returnPos(i){
+    console.log('clicked',i)
+   let box_i =  document.querySelectorAll(`.boxi${i}`)[1] as HTMLDivElement;
+   let box_t =  document.querySelectorAll(`.boxt${i}`)[1] as HTMLDivElement;
+   box_i.style.marginTop= '0px';
+   box_t.style.opacity= '0';
+
+
+  }
   
 
 }
