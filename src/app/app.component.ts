@@ -164,7 +164,8 @@ approute;
     
     let s = e.target.scrollTop;
     let delta = s- this.scrollast;
-    console.log(s);
+    this.scrollast =s;
+    console.log(s,this.scrollast,delta);
 
     if(document.querySelector('#mainpic')){
       if(s > 50){
@@ -178,16 +179,35 @@ approute;
       
         //Script to chagne the main picture views
         if(document.querySelector('.successstoryimage')){
-          if(s > (1860*this.scalen)){
-            if(delta > 0 ){
-              (<HTMLDivElement>document.querySelector('.successstoryimage')).style.top = `${(3846-.02*s)*this.scalen}px`;
-            (<HTMLDivElement>document.querySelector('.jointeamimage')).style.top = `${(3846-.02*s)*this.scalen}px`
-            }else{
-              (<HTMLDivElement>document.querySelector('.successstoryimage')).style.top = `${(3846+.0015*s)*this.scalen}px`;
-            (<HTMLDivElement>document.querySelector('.jointeamimage')).style.top = `${(3846+.0015*s)*this.scalen}px`
-            }
+          let s_image = document.querySelector('.successstoryimage') as HTMLDivElement;
+          let j_image = document.querySelector('.jointeamimage') as HTMLDivElement;
+          let c_s_top = s_image.offsetTop;
+          let c_j_top = j_image.offsetTop;
+          //Move picture based upon view width
+          if(this.screenWidth >905){
+            if(s > (2660*this.scalen)){
+            
+              if(delta>0){
+                if(c_s_top>3806){
+                 
+                s_image.style.top = `${(c_s_top-(10))}px`;
+                j_image.style.top = `${(c_j_top-(10))}px`
+                }
+              }else{
+                if(c_s_top<3836){
+                  s_image.style.top = `${(c_s_top+(10))}px`;
+                  j_image.style.top = `${(c_j_top+(10))}px`
+                }
+               
+              }
+                
+            
             
           }
+          }else{
+
+          }
+          
         }
         
     }
@@ -226,25 +246,34 @@ approute;
         function returnall(p){
           for(var i= 1; i <5;i++){
             if(i != p){
-            let box_i =  document.querySelectorAll(`.boxi${i}`)[1] as HTMLDivElement;
+            try{
+              let box_i =  document.querySelectorAll(`.boxi${i}`)[1] as HTMLDivElement;
             let box_t =  document.querySelectorAll(`.boxt${i}`)[1] as HTMLDivElement;
             box_i.style.marginTop= '0px';
             box_t.style.opacity= '0';
+            }catch(e){
+
+            }  
+            
             }
             
           }
         }
 
         function activatemove(i){
-          let box_1 =document.querySelectorAll(`.box${i}`)[1] as HTMLDivElement;
-          box_1.click();
+
+          try{
+            let box_1 =document.querySelectorAll(`.box${i}`)[1] as HTMLDivElement;
+            box_1.click();
+          }catch(e){}
+         
         }
 
  
    
   
 
-      this.scrollast =e.target.scrollTop;
+     
  
   
   }

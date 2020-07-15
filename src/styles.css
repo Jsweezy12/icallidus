@@ -28,6 +28,9 @@
 .backmain:hover{
     cursor:hover
 }
+.hover:hover{
+    cursor: pointer;
+}
 
 .footer{
     width:100vw;
@@ -87,6 +90,10 @@ label , p{
 }
 
 .successstoryimage{
+    transition: top 500ms;
+}
+
+.jointeamimage{
     transition: top 500ms;
 }
 

@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
 import { RouterModule,Routes } from "@angular/router";
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import {HomeComponent} from './components/home/home.component';
@@ -15,7 +16,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AppmodernizationComponent } from './components/appmodernization/appmodernization.component';
 import { DigitTComponent } from './components/digit-t/digit-t.component';
 import { EnterpriseSSComponent } from './components/enterprise-ss/enterprise-ss.component';
-import { DataanalyticsComponent } from './components/dataanalytics/dataanalytics.component'
+import { DataanalyticsComponent } from './components/dataanalytics/dataanalytics.component';
+import { QuestionsComponent } from './components/questions/questions.component'
 
 const ROUTES: Routes = [
   {path:'home',component:HomeComponent},
@@ -29,7 +31,8 @@ const ROUTES: Routes = [
   {path:'contact',component:ContactComponent},
   {path:'solutions',component:SolutionsComponent},
   {path:'ess',component:EnterpriseSSComponent},
-  {path:'analytics',component:DataanalyticsComponent}
+  {path:'analytics',component:DataanalyticsComponent},
+  {path:'questions',component:QuestionsComponent}
 
 
 ]
@@ -48,12 +51,14 @@ const ROUTES: Routes = [
     AppmodernizationComponent,
     DigitTComponent,
     EnterpriseSSComponent,
-    DataanalyticsComponent
+    DataanalyticsComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
