@@ -1,3 +1,25 @@
+
+
+@media only screen and (max-width: 905px) {
+    .normal{
+        display: none;
+    }
+    .mobile{
+        display:block !important
+    }
+
+    .selectionscontent{
+    top: 1705px !important;
+    left: -45px !important;
+    width: 464px !important;
+    }
+    
+    }
+    
+    .mobile{
+        display:none 
+    }
+
 .selectionscontent{
     position: absolute;
     top: 1300px;
@@ -6,3 +28,4 @@
     height: 1200px;
     width: 1850px;
 }
+

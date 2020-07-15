@@ -193,7 +193,7 @@ approute;
     }
 
    
-        if(this.approute =='solutions'){
+        
           if(s > (this.scalen * 2000.306640625)){
             activatemove(1)
            
@@ -217,6 +217,7 @@ approute;
             returnall(5);
            
           }
+          if(this.approute =='solutions'){
         }
        
 
