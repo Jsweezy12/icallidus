@@ -9,7 +9,11 @@ export class CareersComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  prev;
+  prevName;
+ngOnInit() {
+  this.prevName = localStorage.getItem("prev");
+  this.prev = localStorage.getItem("prevRoute");
 
+}
 }

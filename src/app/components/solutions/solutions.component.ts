@@ -59,7 +59,11 @@ export class SolutionsComponent implements OnInit {
       });
     }
     html
+    prev;
+    prevName;
   ngOnInit() {
+    this.prevName = localStorage.getItem("prev");
+    this.prev = localStorage.getItem("prevRoute");
    
 
   }

@@ -11,7 +11,11 @@ export class EnterpriseSSComponent implements OnInit {
   constructor( private connector: WebpateService,
     private dom:DomSanitizer) { }
     html   
+    prev;
+    prevName;
   ngOnInit() {
+    this.prevName = localStorage.getItem("prev");
+    this.prev = localStorage.getItem("prevRoute");
     this.connector.allhtml.subscribe(res=>{
       console.log(res);
       setTimeout(() => {

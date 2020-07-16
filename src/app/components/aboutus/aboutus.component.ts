@@ -12,8 +12,13 @@ export class AboutusComponent implements OnInit {
   constructor( private connector: WebpateService,
     private dom:DomSanitizer) { }
     html
-    mhtml
+    mhtml;
+    prev;
+    prevName;
   ngOnInit() {
+    this.prevName = localStorage.getItem("prev");
+    this.prev = localStorage.getItem("prevRoute");
+    console.log("Getting Previous",this.prevName, this.prev);
     this.connector.allhtml.subscribe(res=>{
       console.log(res);
       setTimeout(() => {

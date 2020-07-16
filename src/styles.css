@@ -58,7 +58,9 @@ body{
     margin:0px
     
 }
-
+.labelPage {
+    width: 600px !important;
+}
 .skirt{
     position: absolute;
     left: 0px;
