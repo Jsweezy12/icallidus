@@ -168,22 +168,29 @@ approute;
         
       });
 
-  }
+      window.addEventListener('scroll', (event)=>{
+        this.scrollCapture(event)
+      }, true)
 
+  }
 
 
   smoothscroll(top:number){
     console.log('scroll called',top)
-    try{
-      let p = top*this.scalen
-      console.log('scroll adjustent',p);
-      window.scrollTo({top:p,behavior: 'smooth' });  
-    }catch(e){
-      console.log(e)
-    }
+    setTimeout(() => {
+      try{
+        let p = top*this.scalen
+        console.log('scroll adjustent',p);
+        // document.querySelector('#mainwrapper').scrollTo(0,p);  
+        window.scrollTo({top:p,behavior: 'smooth' });  
+      }catch(e){
+        console.log(e)
+      }
+    }, 100);
+    
     
 
-    //  document.querySelector('body').scrollTo(0,0);  
+   
 }
 
   ngOnChanges(){
@@ -199,7 +206,7 @@ approute;
   scrollCapture(e){
     // console.log(e)
     
-    let s = e.target.scrollTop;
+    let s = e.srcElement.scrollingElement.scrollTop;
     let delta = s- this.scrollast;
     this.scrollast =s;
     console.log(s,this.scrollast,delta);

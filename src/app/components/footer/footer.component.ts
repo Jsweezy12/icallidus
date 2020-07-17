@@ -25,9 +25,15 @@ export class FooterComponent implements OnInit {
   smoothscroll(pi){
     console.log('scroll called from footerpage')
     try{
-      let p = pi
-      console.log('scroll adjustent',p);
-      document.querySelector("#mainwrapper").scrollTo(0,p) 
+     
+        let p = pi
+        console.log('scroll adjustent',p);
+        // document.querySelector("#mainwrapper").scrollTo(0,p);
+        window.scrollTo({top:p,behavior: 'smooth' });
+      
+   
+
+
     }catch(e){
       console.log(e)
     }

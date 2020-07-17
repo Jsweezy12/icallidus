@@ -1,4 +1,4 @@
-<div (scroll)="scrollCapture($event)" id="mainwrapper" style="width:100vw;height:100vh;overflow-x:hidden">
+<div  id="mainwrapper" >
 
   <div id="header" *ngIf="!showmodal" style="
       width: 100vw;
@@ -73,7 +73,7 @@
 
   </div>
 
-  <div style="position: 
+  <div *ngIf="!showmodal" style="position: 
   relative;float:left;top:0px;left:0px;
   width:100vw;
   min-width: 100vh;
@@ -248,9 +248,9 @@ height: 200vh;">
 
         <!--AboutDiv-->
         <div class="show_options" [ngStyle]="{'height':showmodalbtngroup == 'aboutus'?'295px':'0px'}">
-          <p (click)="routeme('aboutus');showmodal = false;this.smoothscroll(1516)">Ingenuity and Experience</p>
-          <p (click)="routeme('aboutus');showmodal = false">Driving Enterprise Forward</p>
-          <p (click)="routeme('aboutus');showmodal = false">Innovative Minds</p>
+          <p (click)="routeme('aboutus');showmodal = false;smoothscroll(800)">Ingenuity and Experience</p>
+          <p (click)="routeme('aboutus');showmodal = false;smoothscroll(1511)">Driving Enterprise Forward</p>
+          <p (click)="routeme('aboutus');showmodal = false;smoothscroll(2548)">Innovative Minds</p>
         </div>
 
 
