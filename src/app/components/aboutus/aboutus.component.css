@@ -17,3 +17,27 @@
     .mobile{
         display:none 
     }
+    img{
+        position: absolute;
+    }
+
+    .whyic1{
+        top: 898px;
+right: 0px;
+width: 1199px;
+height: 618px;
+    }
+
+    .whyic2{
+        top: 1500px;
+    left: 0px;
+    width: 955px;
+    height: 644px;
+    }
+
+    .whyic3{
+        top: 2138px;
+        right: 105px;
+        width: 941px;
+        height: 600px;
+    }

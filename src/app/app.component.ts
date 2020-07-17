@@ -264,9 +264,10 @@ approute;
 
           try{
             let box_1 =document.querySelectorAll(`.box${i}`)[1] as HTMLDivElement;
+            console.log(box_1)
             box_1.click();
           }catch(e){}
-         
+          
         }
 
  

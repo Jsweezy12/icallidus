@@ -17,7 +17,9 @@
     }
 
 }
-  
+  img{
+      transition:opacity 500ms
+  }
 
 /* Main Page Model Code*/
 .modalbtncontainer div{
