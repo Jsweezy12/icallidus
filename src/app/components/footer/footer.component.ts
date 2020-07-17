@@ -23,28 +23,29 @@ export class FooterComponent implements OnInit {
  
 
   smoothscroll(pi){
-    console.log('scroll called from footerpage')
+    console.log('scroll called from footerpage');
+     let el =document.querySelector("#mainwrapper") as HTMLDivElement;
+     el.style.minHeight="1500px"
     try{
      
         let p = pi
         console.log('scroll adjustent',p);
-        // document.querySelector("#mainwrapper").scrollTo(0,p);
-        window.scrollTo({top:p,behavior: 'smooth' });
-      
-   
-
-
+        setTimeout(() => {
+          // document.querySelector("#mainwrapper").scrollTo(0,p);
+          window.scrollTo({top:p,behavior: 'smooth' });
+        }, 500);
     }catch(e){
       console.log(e)
     }
+
+    
 
   }
 
   routeme(routeurl){ 
     console.log('routeurl')
     this.router.navigate([`/${routeurl}`])
-    
-      this.smoothscroll(0)
+    this.smoothscroll(0)
    
     
   }

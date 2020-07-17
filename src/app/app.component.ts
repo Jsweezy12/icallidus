@@ -117,6 +117,8 @@ approute;
   onResize(event) {
     event.target.innerWidth;
   }
+
+
   navhtml
   headerhtml
   modalhtml
@@ -130,6 +132,9 @@ approute;
 
   showmodalbtngroup;
   ngOnInit(){
+    // window.addEventListener('scroll', (event)=>{
+    //   this.scrollCapture(event)
+    // }, true)
     document.querySelector('body').style.overflowY = 'scroll'
     this.screenWidth = document.querySelector('body').clientWidth;
     this.screenHeight = window.innerHeight;
@@ -168,9 +173,7 @@ approute;
         
       });
 
-      window.addEventListener('scroll', (event)=>{
-        this.scrollCapture(event)
-      }, true)
+     
 
   }
 
@@ -181,12 +184,15 @@ approute;
       try{
         let p = top*this.scalen
         console.log('scroll adjustent',p);
-        // document.querySelector('#mainwrapper').scrollTo(0,p);  
-        window.scrollTo({top:p,behavior: 'smooth' });  
+        let el =document.querySelector("#mainwrapper") as HTMLDivElement;
+        el.style.minHeight="unset"
+        el.scrollTo(0,p); 
+        
+         
       }catch(e){
         console.log(e)
       }
-    }, 100);
+    }, 1500);
     
     
 
@@ -206,7 +212,7 @@ approute;
   scrollCapture(e){
     // console.log(e)
     
-    let s = e.srcElement.scrollingElement.scrollTop;
+    let s =  e.target.scrollTop 
     let delta = s- this.scrollast;
     this.scrollast =s;
     console.log(s,this.scrollast,delta);

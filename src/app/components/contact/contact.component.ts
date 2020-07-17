@@ -14,26 +14,36 @@ export class ContactComponent implements OnInit {
   html;
   prev;
   prevName;
+  data={CN:''}
 ngOnInit() {
   this.prevName = localStorage.getItem("prev");
   this.prev = localStorage.getItem("prevRoute");
-
-     this.connector.allhtml.subscribe(res=>{
+  
+    this.connector.allhtml.subscribe(res=>{
       this.res = res
-      this.html=this.dom.bypassSecurityTrustHtml(res[0].htmlversion20)
+      setTimeout(() => {
+        this.html=this.dom.bypassSecurityTrustHtml(res[0].htmlversion20)
+      }, 1500);
+      setTimeout(() => {
+        document.querySelectorAll('#send').forEach(elem=>{
+          elem = elem as HTMLDivElement;
+          elem.addEventListener('click',()=>{
+            this.getdata();
+           })
+        })
+      }, 2000);
+     
     });
-    setTimeout(() => {
-      document.querySelector('#send').addEventListener('click',()=>{
-        this.getdata();
-         
-       })
-    }, 500);
+ 
+     
+    
     
   }
 
   getdata(){
     let r = new Function(this.res[0].functions.getFormData.arguments,this.res[0].functions.getFormData.functionbody);
     let data = r();
+    console.log(this.data)
     let message = `
     ${data.POC} from ${data.CN} is requesting a return response to eamail ${data.email} regarding the following,
  
@@ -42,7 +52,7 @@ ngOnInit() {
     `
     console.log(message)
 
-    this.connector.sendemail(message)
+    // this.connector.sendemail(message)
   }
 
 }

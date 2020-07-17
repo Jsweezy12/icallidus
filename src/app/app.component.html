@@ -1,4 +1,6 @@
-<div  id="mainwrapper" >
+<div (scroll)="scrollCapture($event)" id="mainwrapper"
+[ngStyle]='{"min-height":showmodal?"unset":"1500px"}'
+>
 
   <div id="header" *ngIf="!showmodal" style="
       width: 100vw;
@@ -39,7 +41,7 @@
       <img [ngStyle]="{'opacity':scrolled?1:0}" class="hover" src="../assets/truelgo.png" width="100%" height="100%">
       <img style="position: absolute;
       top: 0px;
-      left: 0px;" [ngStyle]="{'opacity':scrolled?0:1}" class="hover" src="../assets/whitelogo.png" width="100%" height="100%">
+      left: 0px;" [ngStyle]="{'opacity':scrolled?0:1}" class="hover" src="../assets/whitelogo.png" width="100%" height="115%">
     </div>
 
     <div class="buttonwrapper" style="position: absolute;
@@ -51,7 +53,7 @@
   width: 200px;
   height: 50px;">
       <!--button1-->
-      <div class="hover" id="openmodal" (click)="this.showmodal = true" style="    position: relative;
+      <div class="hover" id="openmodal" (click)="this.showmodal = true;document.querySelector('body').style.overflowY = 'hidden'" style="    position: relative;
     float: right;
     margin-right: 70px;
     margin-top: 26px;
@@ -90,7 +92,7 @@
   </div>
 
 
-  <div class="skirt" [ngStyle]='{"width":showmodal?this.screenWidth +"px":"0vw","opacity":showmodal?"1":"0",
+  <div class="skirt" [ngStyle]='{"width":showmodal?"100vw":"0vw","opacity":showmodal?"1":"0",
 "height":showmodal?"100vh":"0vh"}'>
 
     <div _ngcontent-nei-c3="">
@@ -248,9 +250,9 @@ height: 200vh;">
 
         <!--AboutDiv-->
         <div class="show_options" [ngStyle]="{'height':showmodalbtngroup == 'aboutus'?'295px':'0px'}">
-          <p (click)="routeme('aboutus');showmodal = false;smoothscroll(800)">Ingenuity and Experience</p>
-          <p (click)="routeme('aboutus');showmodal = false;smoothscroll(1511)">Driving Enterprise Forward</p>
-          <p (click)="routeme('aboutus');showmodal = false;smoothscroll(2548)">Innovative Minds</p>
+          <p (click)="routeme('aboutus');showmodal = false;smoothscroll(801)">Ingenuity and Experience</p>
+          <p (click)="routeme('aboutus');showmodal = false;smoothscroll(1416);">Driving Enterprise Forward</p>
+          <p (click)="routeme('aboutus');showmodal = false;smoothscroll(2101)">Innovative Minds</p>
         </div>
 
 

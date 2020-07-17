@@ -49,8 +49,14 @@
     width: 100vw;
 }
 
+
+
 #mainwrapper{
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
+    width:100vw;
+    height:auto;
+    overflow-y:scroll;
+    overflow-x:hidden
 }
 
 body{
@@ -101,8 +107,8 @@ label , p{
 
 .contentwrapper{
     position: relative;
-    min-height: 1000px;
 float: left;
+min-height: 1500px;
 height: auto;
 width: 100vw;
 perspective: 600px;
