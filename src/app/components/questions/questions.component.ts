@@ -28,7 +28,11 @@ export class QuestionsComponent implements OnInit {
     htmlversion17:{name:'DATA ANALYTICS PAGE',route:'analytics'}
 
   }
-  ngOnInit() {
+  prev;
+  prevName;
+ngOnInit() {
+  this.prevName = localStorage.getItem("prev");
+  this.prev = localStorage.getItem("prevRoute");
     this.connector.allhtml.subscribe(res=>{
       console.log(res);
       setTimeout(() => {

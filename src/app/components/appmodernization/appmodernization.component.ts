@@ -13,7 +13,11 @@ export class AppmodernizationComponent implements OnInit {
     private dom:DomSanitizer) { }
     html
     html2
+    prev;
+    prevName;
   ngOnInit() {
+    this.prevName = localStorage.getItem("prev");
+    this.prev = localStorage.getItem("prevRoute");
     this.connector.allhtml.subscribe(res=>{
       console.log(res);
       setTimeout(() => {

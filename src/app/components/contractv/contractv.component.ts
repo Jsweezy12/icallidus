@@ -14,7 +14,11 @@ export class ContractvComponent implements OnInit {
     private dom:DomSanitizer) { }
     html;
     selected="gsa1"
+    prev;
+    prevName;
   ngOnInit() {
+    this.prevName = localStorage.getItem("prev");
+    this.prev = localStorage.getItem("prevRoute");
     this.connector.allhtml.subscribe(res=>{
       console.log(res);
       setTimeout(() => {

@@ -1,6 +1,11 @@
 <label _ngcontent-ajx-c3="" class="ailabel labelPage">
+<<<<<<< HEAD
     <a class="cpointer" [routerLink]="['/home']">Home</a> / <a class="cpointer" [routerLink]="['/dt']">Digital
         Transformation</a>
+=======
+    <a class="cpointer" [routerLink]="['/home']">Home / </a><a *ngIf="this.prevName != ''" class="cpointer" [routerLink]="[this.prev]">{{this.prevName}} / </a><a class="cpointer"
+        [routerLink]="['/dt']">Digital Transformation</a>
+>>>>>>> 6feb9f3b708dd686fc4d4daf013a9fa1809a779c
 </label>
 
 <img id="mainpic" style="position: absolute;

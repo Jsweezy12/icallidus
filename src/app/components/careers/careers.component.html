@@ -1,5 +1,5 @@
 <label _ngcontent-ajx-c3="" class="ailabel labelPage">
-    <a class="cpointer" [routerLink]="['/home']">Home</a> / <a class="cpointer" [routerLink]="['/careers']">Careers</a>
+    <a class="cpointer" [routerLink]="['/home']">Home / </a><a *ngIf="this.prevName != ''" class="cpointer" [routerLink]="[this.prev]">{{this.prevName}} / </a><a class="cpointer" [routerLink]="['/careers']">Careers</a>
 </label>
 
 <div class="normal" id="mainpic" style="width: 1920px;height: 1600px;position: absolute;
