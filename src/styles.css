@@ -144,3 +144,7 @@ perspective: 600px;
     color: white;
     text-decoration: none;
 }
+
+.db{
+    line-height:65px !important
+    }

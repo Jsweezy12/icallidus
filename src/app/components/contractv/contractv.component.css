@@ -9,7 +9,9 @@
     }
 
     .selectionscontent{
-    top: 1705px !important;
+        position: relative !important;
+        float:left !important;
+    top: 0px !important;
     left: -45px !important;
     width: 464px !important;
     }
@@ -26,10 +28,24 @@
 
 .selectionscontent{
     position: absolute;
+    float:left;
     top: 1300px;
     left: 50px;
     z-index: 99;
-    height: 1200px;
+    height: auto;
     width: 1850px;
+}
+
+.float{
+    position: relative;
+    float:left
+}
+
+.mclass{
+    position: relative;
+    float: left;
+    height: auto;
+    margin-left: 70px;
+    width: 100vw;
 }
 
