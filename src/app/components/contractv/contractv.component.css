@@ -19,7 +19,9 @@
     #mainfotter{
         display: none;
     }
-    
+    #mainpic{
+        left:-553px !important
+    }
     }
     
     .mobile{

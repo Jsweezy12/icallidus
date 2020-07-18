@@ -1,18 +1,43 @@
 @media only screen and (max-width: 905px) {
     .normal{
-        display: none;
+        display: block !important;
     }
     .mobile{
         display:block !important
     }
 
+    .subtitlem{
+        width: 361px !important ;
+        top: 632px !important;
+        left: 48px !important;  
+    }
+
+    #searchtext{
+    top: 726px !important;
+    left: 43px !important;
+    width: 294px!important;
+    }
+    .sicon{
+        top: 744.391px !important;
+        left: 64.999px !important;
+    }
+
+    .resultswrapper{
+        left:-26px !important
+    }
+
+    #pic{
+        left:-1379px !important
+    }
+
+    .hero{
+        left:48px !important
+    }
     
     
     }
     
-    .mobile{
-        display:none 
-    }
+    
 
     #searchtext{
             position: absolute;

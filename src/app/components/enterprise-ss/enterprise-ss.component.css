@@ -1,0 +1,34 @@
+@media only screen and (max-width: 905px) {
+    .normal{
+        display: none;
+    }
+    .mobile{
+        display:block !important
+    }
+
+    /* .selectionscontent{
+        position: relative !important;
+        float:left !important;
+    top: 0px !important;
+    left: -45px !important;
+    width: 464px !important;
+    } */
+
+    /* #mainfotter{
+        display: none;
+    } */
+    
+    }
+
+    .mobile{
+        display:none 
+    }
+
+    .headers{
+        font-weight: 800;
+    }
+
+    .optcontainer{
+        width: 70vw;
+    margin-left: 48px;
+    }

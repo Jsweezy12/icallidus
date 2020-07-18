@@ -13,6 +13,7 @@ export class EnterpriseSSComponent implements OnInit {
     html   
     prev;
     prevName;
+    btnI=0;
   ngOnInit() {
     this.prevName = localStorage.getItem("prev");
     this.prev = localStorage.getItem("prevRoute");
@@ -24,6 +25,25 @@ export class EnterpriseSSComponent implements OnInit {
       
     });
 
+  }
+
+  select(index){
+    this.btnI= index
+    console.log(this.btnI)
+  }
+
+  pickcolor(){
+    if(this.btnI == 1){
+      return '#87B62B'
+    }
+
+    if(this.btnI == 3){
+      return '#0296D7'
+    }
+
+    if(this.btnI == 2){
+      return '#2E369B'
+    }
   }
 
 }
