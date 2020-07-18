@@ -3,3 +3,20 @@
     top: 1081px;
     left: 954px;
 }
+
+@media only screen and (max-width: 905px) {
+    .normal{
+        display: none;
+    }
+    .mobile{
+        display:block !important
+    }
+    
+    .jointeamimage{display: none;
+    }
+    
+    }
+    
+    .mobile{
+        display:none 
+    }

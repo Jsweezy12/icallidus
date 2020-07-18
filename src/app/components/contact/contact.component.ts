@@ -28,7 +28,7 @@ ngOnInit() {
           this.getdata();
          })
       })
-    }, 2000);
+    }, 500);
     
     
   }

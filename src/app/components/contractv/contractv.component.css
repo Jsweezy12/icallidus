@@ -13,6 +13,10 @@
     left: -45px !important;
     width: 464px !important;
     }
+
+    #mainfotter{
+        display: none;
+    }
     
     }
     
