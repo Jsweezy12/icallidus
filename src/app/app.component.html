@@ -243,7 +243,7 @@ height: 200vh;">
       </div>
 
       <div class="modalbtncontainer">
-        <div class="modalbtnhover" (mouseover)="showmodalbtngroup = 'aboutus'">
+        <div class="modalbtnhover"(dblclick)="routeme('aboutus');showmodal = false" (mouseover)="showmodalbtngroup = 'aboutus'">
 
           <label _ngcontent-nei-c3="" class="ailabel"
             style="border-style: solid; font-weight: 1000; font-family: &quot;Nunito Sans&quot;; font-size: 50px; color: rgb(255, 255, 255); background: transparent; border-width: 0px; padding: 0px; width: 297px; height: 73px; top: 254px; left: 176px; text-align: left; transform: rotate(0deg) skewX(0deg) skewY(0deg); box-shadow: 0px 0px; z-index: 1;"
@@ -256,7 +256,7 @@ height: 200vh;">
         <div class="show_options" [ngStyle]="{'height':showmodalbtngroup == 'aboutus'?'295px':'0px'}">
           <p (click)="routeme('aboutus');showmodal = false;smoothscroll(801)">Ingenuity and Experience</p>
           <p (click)="routeme('aboutus');showmodal = false;smoothscroll(1416);">Driving Enterprise Forward</p>
-          <p (click)="routeme('aboutus');showmodal = false;smoothscroll(2101)">Innovative Minds</p>
+          <p (click)="routeme('aboutus');showmodal = false;smoothscroll(2001)">Innovative Minds</p>
         </div>
 
 
@@ -276,8 +276,9 @@ height: 200vh;">
         </div>
 
 
-        <div class="modalbtnhover" (click)="showmodalbtngroup = 'solutions';routeme('solutions');showmodal = false"
-          (mouseover)="showmodalbtngroup = ''"><label _ngcontent-nei-c3="" class="ailabel"
+        <div class="modalbtnhover " (click)="showmodalbtngroup = 'solutions';routeme('solutions');showmodal = false"
+          (mouseover)="showmodalbtngroup = ''">
+          <label _ngcontent-nei-c3="" class="ailabel sphover hover"
             style="border-style: solid;  font-weight: 1000; font-family: &quot;Nunito Sans&quot;; font-size: 50px; color: rgb(255, 255, 255); background: transparent; border-width: 0px; padding: 0px; width: 407px; height: 67px; top: 620px; left: 176px; text-align: left; transform: rotate(0deg) skewX(0deg) skewY(0deg); box-shadow: 0px 0px; z-index: 1;"
             ng-reflect-klass="ailabel" ng-reflect-ng-class="" ng-reflect-ng-style="[object Object]">
             SOLUTIONS </label></div>
@@ -290,7 +291,7 @@ height: 200vh;">
 
         <div class="modalbtnhover" (click)="showmodalbtngroup = 'cv';routeme('contractv');showmodal = false"
           (mouseover)="showmodalbtngroup = ''">
-          <label _ngcontent-nei-c3="" class="ailabel" style="border-style: solid; font-weight: 1000; 
+          <label _ngcontent-nei-c3="" class="ailabel sphover hover" style="border-style: solid; font-weight: 1000; 
           font-family: &quot;Nunito Sans&quot;; font-size: 50px; 
           color: rgb(255, 255, 255); background: transparent; border-width: 
           0px; padding: 0px; width: 684px; height: 71px; top: 803px; 
@@ -304,7 +305,7 @@ height: 200vh;">
 
         <div class="modalbtnhover" (click)="showmodalbtngroup = 'careers';routeme('careers');showmodal = false"
           (mouseover)="showmodalbtngroup = ''" ><label _ngcontent-nei-c3=""
-            class="ailabel"
+            class="ailabel sphover hover"
             style="border-style: solid; 
            font-weight: 1000; font-family: &quot;Nunito Sans&quot;; font-size: 50px; color: rgb(255, 255, 255); background: transparent; border-width: 0px; padding: 0px; width: 341px; height: 73px; top: 986px; left: 176px; text-align: left; transform: rotate(0deg) skewX(0deg) skewY(0deg); box-shadow: 0px 0px; z-index: 1;"
             ng-reflect-klass="ailabel" ng-reflect-ng-class="" ng-reflect-ng-style="[object Object]">
@@ -315,7 +316,7 @@ height: 200vh;">
 
         <div _ngcontent-nei-c3="" class="modalbtnhover" (mouseover)="showmodalbtngroup = ''"
           (click)="showmodalbtngroup = 'contact';routeme('contact');showmodal = false">
-          <label _ngcontent-nei-c3="" class="ailabel"
+          <label _ngcontent-nei-c3="" class="ailabel sphover hover"
             style="border-style: solid;  font-weight: 1000; font-family: &quot;Nunito Sans&quot;; font-size: 50px; color: rgb(255, 255, 255); background: transparent; border-width: 0px; padding: 0px; width: 315px; height: 73px; top: 1169px; left: 176px; text-align: left; transform: rotate(0deg) skewX(0deg) skewY(0deg); box-shadow: 0px 0px; z-index: 1;"
             ng-reflect-klass="ailabel" ng-reflect-ng-class="" ng-reflect-ng-style="[object Object]">
             CONTACT </label></div>
@@ -347,7 +348,7 @@ height: 200vh;">
             transformation.
           </p>
 
-          <button (click)="routeme('aboutus');showmodal = false">Read More</button>
+          <button class="hover" (click)="routeme('aboutus');showmodal = false">Read More</button>
 
         </div>
 
@@ -366,7 +367,7 @@ height: 200vh;">
             transformation.
           </p>
 
-          <button (click)="routeme('services');showmodal = false">Read More</button>
+          <button class="hover" (click)="routeme('services');showmodal = false">Read More</button>
 
         </div>
 

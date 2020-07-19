@@ -35,13 +35,20 @@ ngOnInit() {
 
   getdata(){
     console.log(this.data)
-    let message = `
-    ${this.data.POC} from ${this.data.CN} is requesting a return response to eamail ${this.data.email} regarding the following,
- 
-    "${this.data.notes}"
-    
-    `
-    console.log(message)
+    if(this.data.POC == '' || this.data.email == '' ||this.data.email == ''){
+      console.log('missing information')
+
+    }else{
+      let message = `
+      ${this.data.POC} from ${this.data.CN} is requesting a return response to eamail ${this.data.email} regarding the following,
+   
+      "${this.data.notes}"
+      
+      `
+      console.log(message)
+    }
+
+   
 
     // this.connector.sendemail(message)
   }

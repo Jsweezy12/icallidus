@@ -121,6 +121,15 @@ height: 100px;
    background:transparent
 }
 
+.sic button:hover{
+    color:white;
+    cursor: pointer;
+}
+
 .hover:hover{
     cursor: pointer;
+}
+
+.sphover:hover{
+ color:#2E369B !important
 }

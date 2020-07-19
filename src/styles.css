@@ -145,6 +145,7 @@ perspective: 600px;
     text-decoration: none;
 }
 
-.db{
-    line-height:65px !important
-    }
+a{
+    text-decoration: none !important;
+    color: rgba(255, 255, 255,0.35)
+}
