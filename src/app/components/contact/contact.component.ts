@@ -18,6 +18,9 @@ export class ContactComponent implements OnInit {
   POC: "",
   email: "",
   notes: ""}
+  modalmessage='';
+  modal:boolean=false;
+  success:boolean=false
 ngOnInit() {
   this.prevName = localStorage.getItem("prev");
   this.prev = localStorage.getItem("prevRoute");
@@ -37,7 +40,12 @@ ngOnInit() {
     console.log(this.data)
     if(this.data.POC == '' || this.data.email == '' ||this.data.email == ''){
       console.log('missing information')
-
+      this.success = false
+      this.modalmessage = "Please fill in Name, Email, and Inquiry";
+      this.modal = true;
+      setTimeout(() => {
+        this.modal = false
+      }, 3000);
     }else{
       let message = `
       ${this.data.POC} from ${this.data.CN} is requesting a return response to eamail ${this.data.email} regarding the following,
@@ -45,12 +53,20 @@ ngOnInit() {
       "${this.data.notes}"
       
       `
-      console.log(message)
+      console.log(message);
+      this.success = true
+      this.modalmessage = "Thank you for your submission ";
+      this.modal = true;
+      setTimeout(() => {
+        this.modal = false
+      }, 3000);
+      this.connector.sendemail(message)
+
     }
 
    
 
-    // this.connector.sendemail(message)
+    
   }
 
 }

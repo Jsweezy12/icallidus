@@ -1,3 +1,12 @@
+
+ <div 
+ [ngStyle]="{'opacity':modal?'1':'0'}"
+ [ngClass]="{'successful':success}"
+ id="modal">
+ {{this.modalmessage}}
+ 
+ </div>
+
 <div id="mainpic" style="width: 1920px;height: 1020px;position: absolute;
 background-size: cover;
 top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
@@ -5,19 +14,19 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
 </div>
 
 <div class="normal contentwrapper">
-    <div _ngcontent-jvq-c3=""></div>
-    <div _ngcontent-jvq-c3=""><input [(ngModel)]="data.CN" value="data.CN" draggable="false"
-            style="line-height: 1.2;z-index: 2; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 20px; border-width: 0px; border-radius: 0px; width: 591px; height: 70px; top: 1318.33px; left: 1078.33px;"
-            type="text" id="CN" placeholder="Company Name"></div>
-    <div _ngcontent-jvq-c3=""><input [(ngModel)]="data.POC" draggable="false"
+
+    <div _ngcontent-jvq-c3=""><input [(ngModel)]="data.POC" value="data.CN" draggable="false"
+            style="line-height: 1.2;z-index: 2; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 20px; border-width: 0px; border-radius: 0px; width: 591px; height: 70px; top: 1318.33px; left: 1081px;"
+            type="text" id="CN" placeholder="Name"></div>
+    <div _ngcontent-jvq-c3=""><input [(ngModel)]="data.CN" draggable="false"
             style="line-height: 1.2;z-index: 2; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 20px; border-width: 0px; border-radius: 0px; width: 591px; height: 70px; top: 1405px; left: 1081px;"
-            type="text" id="POC" placeholder="Point of Contact"></div>
+            type="text" id="POC" placeholder="Company Name"></div>
     <div _ngcontent-jvq-c3=""><input [(ngModel)]="data.email" draggable="false"
             style="line-height: 1.2;z-index: 2; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 20px; border-width: 0px; border-radius: 0px; width: 591px; height: 70px; top: 1496.67px; left: 1083.33px;"
             type="text" id="email" placeholder="Email"></div>
     <div _ngcontent-jvq-c3=""><textarea [(ngModel)]="data.notes" draggable="false"
             style="line-height: 1.2;z-index: 2; padding: 10px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 20px; color: rgb(79, 78, 78); border-width: 0px; border-radius: 0px; width: 587px; height: 150px; top: 1586.67px; left: 1081.67px;padding-left:24px"
-            type="text" id="notes" placeholder="Expand on information here."></textarea></div>
+            type="text" id="notes" placeholder="Inquiry" maxlength="255"></textarea></div>
     <div _ngcontent-jvq-c3="">
 
     </div>
@@ -48,7 +57,7 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
     <div _ngcontent-jvq-c3=""><label _ngcontent-jvq-c3="" class="ailabel hd"
             style="line-height: 1.2;border-style: solid; position: absolute !important; font-weight: 700; font-family: &quot;Nunito Sans&quot;; font-size: 20px; color: rgb(255, 255, 255); background: transparent; border-width: 0px; padding: 0px; width: 723px; height: 335px; top: 1352px; left: 140px; text-align: left; transform: rotate(0deg) skewX(0deg) skewY(0deg); box-shadow: 0px 0px; z-index: 1;">
             Thanks for your interest. Please fill out our contact form and we’ll respond as soon as possible. You can
-            also reach us via email at info@icallidus.com </label></div>
+            also reach us via email at <a href="mailto:info@icallidus.com"><b style="font-weight:1000 ;color:white">info@icallidus.com.</b></a></label></div>
     <div _ngcontent-jvq-c3=""><label _ngcontent-ajx-c3="" class="ailabel labelPage">
             <a class="cpointer" [routerLink]="['/home']">Home / </a><a *ngIf="this.prevName != ''" class="cpointer"
                 [routerLink]="[this.prev]">{{this.prevName}} / </a><a class="cpointer"
@@ -104,7 +113,16 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
 
 </div>
 
-<div class="contentwrapper mobile">
+<div class="contentwrapper mobile" >
+    <div 
+    style="top:1894.75px;
+    left: 14px;"
+ [ngStyle]="{'opacity':modal?'1':'0'}"
+ [ngClass]="{'successful':success}"
+ id="modal">
+ {{this.modalmessage}}
+ 
+ </div>
 
     <div _ngcontent-hui-c3="">
 
@@ -112,9 +130,9 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
 
 
 
-        <input [(ngModel)]="data.CN" draggable="false"
+        <input [(ngModel)]="data.POC" draggable="false"
             style="line-height: 1.2;z-index: 1; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: &quot;Nunito Sans&quot;; font-size: 20px; border-width: 0px; border-radius: 0px; width: 357px; height: 70px; top: 1698.75px; left: 22px; text-align: left;"
-            type="text" id="CN" placeholder="Company Name">
+            type="text"  placeholder="Name">
 
 
 
@@ -125,9 +143,9 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
 
 
 
-        <input [(ngModel)]="data.POC" draggable="false"
+        <input [(ngModel)]="data.CN" draggable="false"
             style="line-height: 1.2;z-index: 1; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: &quot;Nunito Sans&quot;; font-size: 20px; border-width: 0px; border-radius: 0px; width: 357px; height: 70px; top: 1787.5px; left: 22px; text-align: left;"
-            type="text" id="POC" placeholder="Contact Name">
+            type="text"  placeholder="Company Name">
 
 
 
@@ -157,7 +175,7 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
             left: 22.5px;
             padding-left: 24px;
             padding-top: 23px;"
-            type="text" id="email" placeholder="Expand on Information here ."></textarea>
+            type="text" id="email" placeholder="Inquiry"></textarea>
 
     </div>
     <div _ngcontent-hui-c3="">
@@ -168,7 +186,7 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
 
         <input [(ngModel)]="data.notes" draggable="false"
             style="line-height: 1.2;z-index: 1; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: &quot;Nunito Sans&quot;; font-size: 20px; border-width: 0px; border-radius: 0px; width: 357px; height: 70px; top: 1878.75px; left: 22px; text-align: left;"
-            type="text" id="notes" placeholder="Email">
+            type="text" id="notes" placeholder="Email" maxlength="255">
 
 
 

@@ -16,4 +16,31 @@
         opacity: 0.5
     }
 
+    #modal{
+    position: absolute;
+    top: 45%;
+    right: 335px;
+    height: auto;
+    width: 400px;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    border: 1px solid #ff00005c;
+    z-index: 99;
+    box-shadow: 0px 0px 10px #ff0000;
+    background: red;
+    opacity: 1;
+    transition: opacity 1000ms
+    }
+
+    .successful{
+        border: 1px solid #7ab53b !important;
+        z-index: 99;
+        box-shadow: 0px 0px 10px #7ab53b !important;
+        background: #7ab53b !important;
+    }
+
+    .contentwrapper{
+        width:1920px !important
+    } 
     
