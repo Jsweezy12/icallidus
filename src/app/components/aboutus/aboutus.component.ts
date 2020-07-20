@@ -19,14 +19,7 @@ export class AboutusComponent implements OnInit {
     this.prevName = localStorage.getItem("prev");
     this.prev = localStorage.getItem("prevRoute");
     console.log("Getting Previous",this.prevName, this.prev);
-    this.connector.allhtml.subscribe(res=>{
-      console.log(res);
-      setTimeout(() => {
-        this.html=this.dom.bypassSecurityTrustHtml(res[0].htmlversion3)
-        this.mhtml=this.dom.bypassSecurityTrustHtml(res[0].htmlversion18)
-      }, 500);
-      
-    });
+   
 
   }
 

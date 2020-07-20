@@ -246,14 +246,23 @@ height: 200vh;">
       </div>
 
       <div class="modalbtncontainer">
-        <div class="modalbtnhover"(dblclick)="routeme('aboutus');showmodal = false" (mouseover)="showmodalbtngroup = 'aboutus'">
-
-          <label _ngcontent-nei-c3="" class="ailabel"
+        <div class="modalbtnhover normal" (click)="showmodalbtngroup == 'aboutus'?routeme('aboutus'):false" (mouseover)="showmodalbtngroup = 'aboutus'">
+          <label _ngcontent-nei-c3="" class="ailabel sphover"
             style="border-style: solid; font-weight: 1000; font-family: &quot;Nunito Sans&quot;; font-size: 50px; color: rgb(255, 255, 255); background: transparent; border-width: 0px; padding: 0px; width: 297px; height: 73px; top: 254px; left: 176px; text-align: left; transform: rotate(0deg) skewX(0deg) skewY(0deg); box-shadow: 0px 0px; z-index: 1;"
             ng-reflect-klass="ailabel" ng-reflect-ng-class="" ng-reflect-ng-style="[object Object]">
             ABOUT
             US </label>
         </div>
+
+        <div class="mobile modalbtnhover" (click)="showmodalbtngroup == 'aboutus'?routeme('aboutus'):showmodalbtngroup = 'aboutus'" >
+          <label _ngcontent-nei-c3="" class="ailabel"
+            style="border-style: solid; font-weight: 1000; font-family: &quot;Nunito Sans&quot;; font-size: 50px; color: rgb(255, 255, 255); background: transparent; border-width: 0px; padding: 0px; width: 297px; height: 73px; top: 254px; left: 176px; text-align: left; transform: rotate(0deg) skewX(0deg) skewY(0deg); box-shadow: 0px 0px; z-index: 1;"
+            ng-reflect-klass="ailabel" ng-reflect-ng-class="" ng-reflect-ng-style="[object Object]">
+            ABOUT
+            US </label>
+
+        </div>
+
 
         <!--AboutDiv-->
         <div class="show_options" [ngStyle]="{'height':showmodalbtngroup == 'aboutus'?'295px':'0px'}">
@@ -263,11 +272,20 @@ height: 200vh;">
         </div>
 
 
-        <div class="modalbtnhover" (dblclick)="routeme('services');showmodal = false" (mouseover)="showmodalbtngroup = 'services'" _ngcontent-nei-c3=""><label
+        <div class="modalbtnhover normal" (click)="showmodalbtngroup == 'aboutus'?routeme('services'):false" (mouseover)="showmodalbtngroup = 'services'" ><label
+            _ngcontent-nei-c3="" class="ailabel sphover"
+            style="border-style: solid; font-weight: 1000; font-family: &quot;Nunito Sans&quot;; font-size: 50px; color: rgb(255, 255, 255); background: transparent; border-width: 0px; padding: 0px; width: 310px; height: 73px; top: 437px; left: 176px; text-align: left; transform: rotate(0deg) skewX(0deg) skewY(0deg); box-shadow: 0px 0px; z-index: 1;"
+            ng-reflect-klass="ailabel" ng-reflect-ng-class="" ng-reflect-ng-style="[object Object]">
+            SERVICES </label>
+          </div>
+
+          <div class="mobile modalbtnhover" (click)="showmodalbtngroup == 'services'?routeme('services'):showmodalbtngroup = 'services'"  ><label
             _ngcontent-nei-c3="" class="ailabel"
             style="border-style: solid; font-weight: 1000; font-family: &quot;Nunito Sans&quot;; font-size: 50px; color: rgb(255, 255, 255); background: transparent; border-width: 0px; padding: 0px; width: 310px; height: 73px; top: 437px; left: 176px; text-align: left; transform: rotate(0deg) skewX(0deg) skewY(0deg); box-shadow: 0px 0px; z-index: 1;"
             ng-reflect-klass="ailabel" ng-reflect-ng-class="" ng-reflect-ng-style="[object Object]">
-            SERVICES </label></div>
+            SERVICES </label>
+          </div>
+            
 
         <div class="show_options" [ngStyle]="{'height':showmodalbtngroup == 'services'?'365px':'0px'}">
           <p (click)="routeme('dt');showmodal = false">Digital Transformation</p>

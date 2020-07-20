@@ -359,7 +359,8 @@ approute;
 
 routeme(routeurl){
   console.log('routeurl')
-  this.router.navigate([`/${routeurl}`])
+  this.router.navigate([`/${routeurl}`]);
+  this.showmodal = false
 }
 
 
