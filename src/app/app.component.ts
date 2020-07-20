@@ -150,28 +150,28 @@ approute;
         this.SF(); 
     })
    
-      this.connector.allhtml.subscribe(res=>{
-        console.log(res);
-        setTimeout(() => {
-          // this.navhtml=this.dom.bypassSecurityTrustHtml(res[0].htmlform);
-          this.headerhtml= this.dom.bypassSecurityTrustHtml(res[0].htmlversion4);
-          this.modalhtml= this.dom.bypassSecurityTrustHtml(res[0].htmlversion5);
+      // this.connector.allhtml.subscribe(res=>{
+      //   console.log(res);
+      //   setTimeout(() => {
+      //     // this.navhtml=this.dom.bypassSecurityTrustHtml(res[0].htmlform);
+      //     this.headerhtml= this.dom.bypassSecurityTrustHtml(res[0].htmlversion4);
+      //     this.modalhtml= this.dom.bypassSecurityTrustHtml(res[0].htmlversion5);
           
-        }, 500);
+      //   }, 500);
 
-        setTimeout(() => {
+      //   setTimeout(() => {
      
         
 
-          document.querySelector("#closemodal").addEventListener('click',()=>{
-            this.showmodal = false
-            document.querySelector('body').style.overflowY = 'scroll'
-          });
+      //     document.querySelector("#closemodal").addEventListener('click',()=>{
+      //       this.showmodal = false
+      //       document.querySelector('body').style.overflowY = 'scroll'
+      //     });
 
 
-        }, 1000);
+      //   }, 1000);
         
-      });
+      // });
 
      
 
@@ -359,7 +359,8 @@ approute;
 
 routeme(routeurl){
   console.log('routeurl')
-  this.router.navigate([`/${routeurl}`])
+  this.router.navigate([`/${routeurl}`]);
+  this.showmodal = false
 }
 
 
