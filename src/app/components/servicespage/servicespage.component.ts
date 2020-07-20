@@ -20,25 +20,19 @@ export class ServicespageComponent implements OnInit {
   ngOnInit() {
     this.prevName = localStorage.getItem("prev");
     this.prev = localStorage.getItem("prevRoute");
-    this.connector.allhtml.subscribe(res=>{
-      console.log(res);
-      setTimeout(() => {
-        this.html=this.dom.bypassSecurityTrustHtml(res[0].htmlversion7)
-        setTimeout(() => {
-          for(let v =1;v<5;v++){
-            let css = `.learn${v}`
-            document.querySelectorAll(css).forEach(elem=>{
-              elem = elem as HTMLDivElement
-              elem.addEventListener('click',()=>{
-                this.routeme(v)
-              })
-            })
-          }
-          
-        }, 500);
-      }, 500);
+   
+    setTimeout(() => {
+      for(let v =1;v<5;v++){
+        let css = `.learn${v}`
+        document.querySelectorAll(css).forEach(elem=>{
+          elem = elem as HTMLDivElement
+          elem.addEventListener('click',()=>{
+            this.routeme(v)
+          })
+        })
+      }
       
-    });
+    }, 500);
 
   }
 

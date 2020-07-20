@@ -15,6 +15,7 @@
 
     .ailabel:hover{
         cursor: pointer;
+        color: #7AB53B !important
     }
 
     .iC_footer{
@@ -26,4 +27,8 @@
         left: 858px;
         z-index: 99;
         
+    }
+
+    .hclass:hover{
+        color: #7AB53B !important 
     }
