@@ -135,7 +135,7 @@ approute;
     // window.addEventListener('scroll', (event)=>{
     //   this.scrollCapture(event)
     // }, true)
-    document.querySelector('body').style.overflowY = 'scroll'
+    // document.querySelector('body').style.overflowY = 'scroll'
     this.screenWidth = document.querySelector('body').clientWidth;
     this.screenHeight = window.innerHeight;
     console.log('screen size oninit',this.screenWidth,this.screenHeight);
@@ -331,8 +331,8 @@ approute;
   
   SF(){
     if(this.screenWidth < 905){
-      this.scale= `scale(${this.screenWidth/450})`
-      this.scalen= this.screenWidth/450;
+      this.scale= `scale(${this.screenWidth/464})`
+      this.scalen= this.screenWidth/464;
     }else{
       this.scale= `scale(${this.screenWidth/1920})`
       this.scalen= this.screenWidth/1920;

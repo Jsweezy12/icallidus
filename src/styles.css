@@ -60,7 +60,7 @@
 }
 
 body{
-    overflow: hidden;
+    overflow: hidden !important;
     margin:0px
     
 }
@@ -154,6 +154,25 @@ perspective: 600px;
 a{
     text-decoration: none !important;
     color: rgba(255, 255, 255,0.35)
+}
+
+
+.learn1:hover{
+    color:#0296d7 !important
+}
+
+.learn2:hover{
+    color:#0296d7 !important
+}
+
+
+.learn3:hover{
+    color:#0296d7 !important
+}
+
+
+.learn4:hover{
+    color:#0296d7 !important
 }
 
 

@@ -24,8 +24,6 @@ export class FooterComponent implements OnInit {
 
   smoothscroll(pi){
     console.log('scroll called from footerpage');
-     let el =document.querySelector("#mainwrapper") as HTMLDivElement;
-     el.style.minHeight="1500px"
     try{
      
         let p = pi
