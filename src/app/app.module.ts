@@ -18,6 +18,7 @@ import { DigitTComponent } from './components/digit-t/digit-t.component';
 import { EnterpriseSSComponent } from './components/enterprise-ss/enterprise-ss.component';
 import { DataanalyticsComponent } from './components/dataanalytics/dataanalytics.component';
 import { QuestionsComponent } from './components/questions/questions.component'
+import {APP_BASE_HREF} from '@angular/common';
 
 const ROUTES: Routes = [
   {path:'home',component:HomeComponent},
@@ -60,7 +61,7 @@ const ROUTES: Routes = [
     RouterModule.forRoot(ROUTES),
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: './'}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
