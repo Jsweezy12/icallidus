@@ -33,7 +33,7 @@
 }
 
 .footer{
-    width:100vw;
+    width:1920px;
     height: 70vh;
    
     background: #2e369b;
@@ -172,6 +172,10 @@ a{
 
 
 .learn4:hover{
+    color:#0296d7 !important
+}
+
+.job:hover{
     color:#0296d7 !important
 }
 
