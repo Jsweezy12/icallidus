@@ -18,14 +18,14 @@ export class AppmodernizationComponent implements OnInit {
   ngOnInit() {
     this.prevName = localStorage.getItem("prev");
     this.prev = localStorage.getItem("prevRoute");
-    this.connector.allhtml.subscribe(res=>{
-      console.log(res);
-      setTimeout(() => {
-        this.html=this.dom.bypassSecurityTrustHtml(res[0].htmlversion11)
-        this.html2=this.dom.bypassSecurityTrustHtml(res[0].htmlversion19)
-      }, 500);
+    // this.connector.allhtml.subscribe(res=>{
+    //   console.log(res);
+    //   setTimeout(() => {
+    //     this.html=this.dom.bypassSecurityTrustHtml(res[0].htmlversion11)
+    //     this.html2=this.dom.bypassSecurityTrustHtml(res[0].htmlversion19)
+    //   }, 500);
       
-    });
+    // });
 
   }
 

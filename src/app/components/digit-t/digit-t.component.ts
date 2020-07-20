@@ -18,13 +18,7 @@ export class DigitTComponent implements OnInit {
   ngOnInit() {
     this.prevName = localStorage.getItem("prev");
     this.prev = localStorage.getItem("prevRoute");
-    this.connector.allhtml.subscribe(res=>{
-      console.log(res);
-      setTimeout(() => {
-        this.html=this.dom.bypassSecurityTrustHtml(res[0].htmlversion15)
-      }, 500);
-      
-    });
+    
 
   }
 
