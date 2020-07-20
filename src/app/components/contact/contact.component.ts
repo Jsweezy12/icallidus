@@ -19,6 +19,7 @@ export class ContactComponent implements OnInit {
   email: "",
   notes: ""}
   modalmessage='';
+  hideText: boolean = false;
   modal:boolean=false;
   success:boolean=false
 ngOnInit() {
@@ -36,6 +37,13 @@ ngOnInit() {
     
   }
 
+  textInquiry(){
+    this.hideText = true;
+  }
+
+  textOther(){
+    this.hideText = false;
+  }
   getdata(){
     console.log(this.data)
     if(this.data.POC == '' || this.data.email == '' ||this.data.email == ''){

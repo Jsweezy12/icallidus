@@ -15,21 +15,30 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
 
 <div class="normal contentwrapper">
 
-    <div _ngcontent-jvq-c3=""><input [(ngModel)]="data.POC" value="data.CN" draggable="false"
+    <div _ngcontent-jvq-c3=""><input (click)="textOther()" [(ngModel)]="data.POC" value="data.CN" draggable="false"
             style="line-height: 1.2;z-index: 2; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 20px; border-width: 0px; border-radius: 0px; width: 591px; height: 70px; top: 1318.33px; left: 1081px;"
             type="text" id="CN" placeholder="Name"></div>
-    <div _ngcontent-jvq-c3=""><input [(ngModel)]="data.CN" draggable="false"
+    <div _ngcontent-jvq-c3=""><input (click)="textOther()" [(ngModel)]="data.CN" draggable="false"
             style="line-height: 1.2;z-index: 2; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 20px; border-width: 0px; border-radius: 0px; width: 591px; height: 70px; top: 1405px; left: 1081px;"
             type="text" id="POC" placeholder="Company Name"></div>
-    <div _ngcontent-jvq-c3=""><input [(ngModel)]="data.email" draggable="false"
+    <div _ngcontent-jvq-c3=""><input (click)="textOther()" [(ngModel)]="data.email" draggable="false"
             style="line-height: 1.2;z-index: 2; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 20px; border-width: 0px; border-radius: 0px; width: 591px; height: 70px; top: 1496.67px; left: 1083.33px;"
             type="text" id="email" placeholder="Email"></div>
-    <div _ngcontent-jvq-c3=""><textarea [(ngModel)]="data.notes" draggable="false"
-            style="line-height: 1.2;z-index: 2; padding: 10px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 20px; color: rgb(79, 78, 78); border-width: 0px; border-radius: 0px; width: 587px; height: 150px; top: 1586.67px; left: 1081.67px;padding-left:24px"
-            type="text" id="notes" placeholder="Inquiry" maxlength="255"></textarea></div>
-    <div _ngcontent-jvq-c3="">
+    
 
+    <div _ngcontent-jvq-c3="">
+        
+        <textarea (click)="textInquiry()" [(ngModel)]="data.notes" title="Max 255 Characters" draggable="false"
+            style="line-height: 1.2;z-index: 2; padding: 10px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 20px; color: rgb(79, 78, 78); border-width: 0px; border-radius: 0px; width: 587px; height: 150px; top: 1586.67px; left: 1081.67px;padding-left:24px"
+            type="text" id="notes" placeholder="Inquiry" maxlength="255"></textarea>
     </div>
+
+    
+    <div *ngIf="hideText" draggable="false"
+        style="line-height: 1.2;z-index: 2; padding: 5px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 16px; border-width: 0px; border-radius: 0px; width: auto; height: auto; top: 1720.67px; left: 1530.33px; background-color: white;"
+        >Max 255 Characters</div>
+
+
     <div _ngcontent-jvq-c3="">
         <h1 _ngcontent-jvq-c3="" class="starter" contenteditable="false" draggable="false"
             style="line-height: 1.2;padding: 0px; margin: 0px; border-style: solid; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; color: rgb(112, 112, 112); background: rgb(46, 54, 155); border-width: 0px; width: 1919px; height: 402px; top: 810px; left: 1px; z-index: 0; opacity: 1; transform: rotate(0deg) skewX(0deg) skewY(0deg); box-shadow: 0px 0px;">
@@ -129,7 +138,7 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
 
 
 
-        <input [(ngModel)]="data.POC" draggable="false"
+        <input (click)="textOther()" [(ngModel)]="data.POC" draggable="false"
             style="line-height: 1.2;z-index: 1; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: &quot;Nunito Sans&quot;; font-size: 20px; border-width: 0px; border-radius: 0px; width: 357px; height: 70px; top: 1698.75px; left: 22px; text-align: left;"
             type="text"  placeholder="Name">
 
@@ -142,7 +151,7 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
 
 
 
-        <input [(ngModel)]="data.CN" draggable="false"
+        <input (click)="textOther()" [(ngModel)]="data.CN" draggable="false"
             style="line-height: 1.2;z-index: 1; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: &quot;Nunito Sans&quot;; font-size: 20px; border-width: 0px; border-radius: 0px; width: 357px; height: 70px; top: 1787.5px; left: 22px; text-align: left;"
             type="text"  placeholder="Company Name">
 
@@ -157,7 +166,7 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
 
 
 
-        <textarea [(ngModel)]="data.email" draggable="false"
+        <textarea (click)="textInquiry()" [(ngModel)]="data.email" draggable="false"
             style="    line-height: 1.2;
             z-index: 1;
             padding: 0px;
@@ -174,16 +183,47 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
             left: 22.5px;
             padding-left: 24px;
             padding-top: 23px;"
-            type="text" id="email" placeholder="Inquiry"></textarea>
+            type="text" id="email" placeholder="Inquiry" title="Max 255 Characters"></textarea>
 
     </div>
+
+
+
+
+
+
+
+
+
+
+        <div *ngIf="hideText" [(ngModel)]="data.email" draggable="false"
+            style="    line-height: 1.2;
+            z-index: 1;
+            padding: 0px;
+            position: absolute !important;
+            font-style: normal;
+            font-weight: 400;
+            font-family: Quicksand;
+            font-size: 12px;
+            border-width: 0px;
+            border-radius: 0px;
+            width: auto;
+            height: auto;
+            top: 2153.75px;
+            left: 260px;
+            padding-left: 24px;
+            padding-top: 23px;"
+>Max 255 Characters</div>
+
+
+
     <div _ngcontent-hui-c3="">
 
 
 
 
 
-        <input [(ngModel)]="data.notes" draggable="false"
+        <input (click)="textOther()" [(ngModel)]="data.notes" draggable="false"
             style="line-height: 1.2;z-index: 1; padding: 0px 0px 0px 30px; position: absolute !important; font-style: normal; font-weight: 400; font-family: &quot;Nunito Sans&quot;; font-size: 20px; border-width: 0px; border-radius: 0px; width: 357px; height: 70px; top: 1878.75px; left: 22px; text-align: left;"
             type="text" id="notes" placeholder="Email" maxlength="255">
 
