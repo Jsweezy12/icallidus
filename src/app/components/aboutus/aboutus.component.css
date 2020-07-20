@@ -7,12 +7,12 @@
         display:block !important
     }
     
-    /* #sucesstoryimage{
-        top: 5187px;
-        height: 855px;
-    } */
-    
+    #mainpic{
+        left: -759px !important
+     }
     }
+
+    
     
     .mobile{
         display:none 
@@ -41,3 +41,7 @@ height: 618px;
         width: 975px;
         height: 600px;
     }
+
+    /* 
+    width: 1813px;
+    height: 1170px; */
