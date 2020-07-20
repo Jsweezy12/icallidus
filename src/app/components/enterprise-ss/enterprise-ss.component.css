@@ -32,3 +32,7 @@
         width: 70vw;
     margin-left: 48px;
     }
+
+    .items label{
+        color:rgb(112, 112, 112) !important
+    }

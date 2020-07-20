@@ -29,9 +29,9 @@
     }
 
 .selectionscontent{
-    position: absolute;
-    float:left;
-    top: 1300px;
+    position: relative;
+    float: left;
+    top: -1579px;
     left: 141px;
     z-index: 99;
     height: auto;
