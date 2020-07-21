@@ -11,10 +11,9 @@ export class SolutionsComponent implements OnInit {
   
   constructor( private connector: WebpateService,
     private dom:DomSanitizer) { 
-      this.connector.allhtml.subscribe(res=>{
-        console.log(res);
-        setTimeout(() => {
-          this.html=this.dom.bypassSecurityTrustHtml(res[0].htmlversion6);
+  
+
+         
           //hoverover effects
           setTimeout(() => {
 
@@ -54,9 +53,8 @@ export class SolutionsComponent implements OnInit {
          
   
   
-        }, 500);
         
-      });
+   
     }
     html
     prev;

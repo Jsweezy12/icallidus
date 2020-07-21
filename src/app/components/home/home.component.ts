@@ -16,10 +16,8 @@ export class HomeComponent implements OnInit {
     html
     html2    
   ngOnInit() {
-    this.connector.allhtml.subscribe(res=>{
-      console.log(res);
+  
       setTimeout(() => {
-        this.html=this.dom.bypassSecurityTrustHtml(res[0].htmlversion2);
 
         document.querySelectorAll('.learn1').forEach(elem=>{
           let e = elem as HTMLDivElement;
@@ -67,7 +65,7 @@ export class HomeComponent implements OnInit {
         )
       }, 500);
       
-    });
+ 
 
   }
 
