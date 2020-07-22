@@ -17,23 +17,25 @@ import { AppmodernizationComponent } from './components/appmodernization/appmode
 import { DigitTComponent } from './components/digit-t/digit-t.component';
 import { EnterpriseSSComponent } from './components/enterprise-ss/enterprise-ss.component';
 import { DataanalyticsComponent } from './components/dataanalytics/dataanalytics.component';
-import { QuestionsComponent } from './components/questions/questions.component'
+import { QuestionsComponent } from './components/questions/questions.component';
+import { EgoveranceComponent } from './components/egoverance/egoverance.component'
 //import {APP_BASE_HREF} from '@angular/common';
 
 const ROUTES: Routes = [
   {path:'home',component:HomeComponent},
   {path:'',component:HomeComponent}
-  , {path:'appm',component:AppmodernizationComponent},
-  {path:'dt',component:DigitTComponent},
+  , {path:'modernization',component:AppmodernizationComponent},
+  {path:'digital',component:DigitTComponent},
   {path:'aboutus',component:AboutusComponent},
   {path:'services',component:ServicespageComponent},
   {path:'contractv',component:ContractvComponent},
   {path:'careers', component:CareersComponent},
   {path:'contact',component:ContactComponent},
   {path:'solutions',component:SolutionsComponent},
-  {path:'ess',component:EnterpriseSSComponent},
+  {path:'enterprise',component:EnterpriseSSComponent},
   {path:'analytics',component:DataanalyticsComponent},
-  {path:'questions',component:QuestionsComponent}
+  {path:'questions',component:QuestionsComponent},
+  {path:'ediscovery',component:EgoveranceComponent}
 
 
 ]
@@ -53,7 +55,8 @@ const ROUTES: Routes = [
     DigitTComponent,
     EnterpriseSSComponent,
     DataanalyticsComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    EgoveranceComponent
   ],
   imports: [
     BrowserModule,

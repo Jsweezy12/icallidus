@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
         document.querySelectorAll('.learn1').forEach(elem=>{
           let e = elem as HTMLDivElement;
           e.addEventListener('click',()=>{
-            this.routeme('dt')
+            this.routeme('digital')
           })
         }
         
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
         document.querySelectorAll('.learn2').forEach(elem=>{
           let e = elem as HTMLDivElement;
           e.addEventListener('click',()=>{
-            this.routeme('appm')
+            this.routeme('modernization')
           })
         }
         
@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
         document.querySelectorAll('.learn4').forEach(elem=>{
           let e = elem as HTMLDivElement;
           e.addEventListener('click',()=>{
-            this.routeme('ess')
+            this.routeme('enterprise')
           })
         }
         

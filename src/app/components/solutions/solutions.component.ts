@@ -17,7 +17,7 @@ export class SolutionsComponent implements OnInit {
           //hoverover effects
           setTimeout(() => {
 
-            for( var i=1;i<5;i++){
+            for( var i=1;i<7;i++){
              let box_1 =document.querySelector(`.box${i}`) as HTMLDivElement;
               let box_i =  document.querySelector(`.boxi${i}`) as HTMLDivElement;
               let box_t =  document.querySelector(`.boxt${i}`) as HTMLDivElement;
@@ -27,8 +27,7 @@ export class SolutionsComponent implements OnInit {
       
               });
 
-              
-      
+
               box_t.addEventListener('mouseover',()=>{
                 box_i.style.marginTop= '-100px';
                 box_t.style.opacity= '1';

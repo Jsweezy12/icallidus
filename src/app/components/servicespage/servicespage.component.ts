@@ -22,7 +22,7 @@ export class ServicespageComponent implements OnInit {
     this.prev = localStorage.getItem("prevRoute");
    
     setTimeout(() => {
-      for(let v =1;v<5;v++){
+      for(let v =1;v<6;v++){
         let css = `.learn${v}`
         document.querySelectorAll(css).forEach(elem=>{
           elem = elem as HTMLDivElement
@@ -40,10 +40,10 @@ export class ServicespageComponent implements OnInit {
     let routeurl = '';
 
     if(num ==1){
-      routeurl='dt'
+      routeurl='digital'
     }
     if(num == 2){
-      routeurl='appm'
+      routeurl='modernization'
     }
 
     if(num ==3){
@@ -51,7 +51,11 @@ export class ServicespageComponent implements OnInit {
     }
 
     if(num==4){
-      routeurl='ess'
+      routeurl='enterprise'
+    }
+
+    if(num ==5){
+      routeurl="ediscovery"
     }
     
     this.router.navigate([`/${routeurl}`])

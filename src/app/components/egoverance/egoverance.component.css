@@ -1,4 +1,3 @@
-
 @media only screen and (max-width: 905px) {
     .normal{
         display: none !important;
@@ -8,11 +7,7 @@
     }
 
     #mainpic{
-      left:-1035px !important  
+      left:-342px !important  
     }
     
-    }
-    
-    .mobile{
-        display:none 
-    }
+}

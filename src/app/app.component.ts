@@ -283,8 +283,21 @@ approute;
             activatemove(4)
             
            }
+
+           if(s > (this.scalen * 4000.306640625)){
+            activatemove(5)
+            
+           }
+
+           if(s > (this.scalen * 4500.306640625)){
+            activatemove(6)
+            
+           }
+
+
+
           if(s <(this.scalen * 2000.306640625) ){
-            returnall(5);
+            returnall(7);
            
           }
           if(this.approute =='solutions'){
@@ -294,7 +307,7 @@ approute;
 
 
         function returnall(p){
-          for(var i= 1; i <5;i++){
+          for(var i= 1; i <7;i++){
             if(i != p){
             try{
               let box_i =  document.querySelectorAll(`.boxi${i}`)[1] as HTMLDivElement;
