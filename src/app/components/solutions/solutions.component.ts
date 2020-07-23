@@ -42,7 +42,9 @@ export class SolutionsComponent implements OnInit {
               box_1.addEventListener('mouseout',()=>{
                 box_i.style.marginTop= '0px';
                 box_t.style.opacity= '0';
-              })
+              });
+
+             
       
             }
             
