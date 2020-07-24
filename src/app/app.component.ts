@@ -231,22 +231,27 @@ approute;
         if(document.querySelector('.successstoryimage')){
           let s_image = document.querySelector('.successstoryimage') as HTMLDivElement;
           let j_image = document.querySelector('.jointeamimage') as HTMLDivElement;
+          console.log(s_image.offsetTop)
           let c_s_top = s_image.offsetTop;
           let c_j_top = j_image.offsetTop;
+
+          let max = 4389
+          let min = 4400
           //Move picture based upon view width
-          if(this.screenWidth >905){
-            if(s > (2660*this.scalen)){
+          if(this.screenWidth > 905){
+            if(s > (2860*this.scalen)){
             
               if(delta>0){
-                if(c_s_top>3806){
-                 
-                s_image.style.top = `${(c_s_top-(10))}px`;
-                j_image.style.top = `${(c_j_top-(10))}px`
+                if(c_s_top > max){
+                  s_image.style.top = `${(c_s_top-(5))}px`;
+                  j_image.style.top = `${(c_j_top-(5))}px`;
+                
                 }
               }else{
-                if(c_s_top<3836){
-                  s_image.style.top = `${(c_s_top+(10))}px`;
-                  j_image.style.top = `${(c_j_top+(10))}px`
+                if(c_s_top < min){
+                  console.log('negative')
+                  s_image.style.top = `${(c_s_top+(5))}px`;
+                  j_image.style.top = `${(c_j_top+(5))}px`
                 }
                
               }

@@ -52,7 +52,14 @@ export class HomeComponent implements OnInit {
             this.routeme('enterprise')
           })
         }
-        
+        )
+
+        document.querySelectorAll('.learn5').forEach(elem=>{
+          let e = elem as HTMLDivElement;
+          e.addEventListener('click',()=>{
+            this.routeme('ediscovery')
+          })
+        }
         )
 
         document.querySelectorAll('.career').forEach(elem=>{
