@@ -32,15 +32,18 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
 
     <div _ngcontent-jvq-c3="">
         
-        <textarea (click)="textInquiry()" [(ngModel)]="data.notes" title="Max 255 Characters" draggable="false"
-            style="line-height: 1.2;z-index: 2; padding: 10px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 20px; color: rgb(79, 78, 78); border-width: 0px; border-radius: 0px; width: 587px; height: 150px; top: 1586.67px; left: 1081.67px;padding-left:24px"
+        <textarea (click)="textInquiry()" 
+        (keyup)="updatecount()"
+        [(ngModel)]="data.notes" title="Max 255 Characters" draggable="false"
+            style="line-height: 1.2;z-index: 2; padding: 10px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 20px; color: rgb(79, 78, 78); border-width: 0px; border-radius: 0px; width: 587px; height: 150px; top: 1586.67px; left: 1081.67px;padding-left:24px;
+            resize: none;"
             type="text" id="notes" placeholder="Inquiry" maxlength="255"></textarea>
     </div>
 
     
-    <div *ngIf="hideText" draggable="false"
-        style="line-height: 1.2;z-index: 2; padding: 5px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 16px; border-width: 0px; border-radius: 0px; width: auto; height: auto; top: 1720.67px; left: 1530.33px; background-color: white;"
-        >Max 255 Characters</div>
+    <div  draggable="false"
+        style="line-height: 1.2;z-index: 2; padding: 5px; position: absolute !important; font-style: normal; font-weight: 400; font-family: Quicksand; font-size: 16px; border-width: 0px; border-radius: 0px; width: auto; height: auto; top: 1768.67px; left: 1583.33px; color: white;"
+        >Remianing: {{count}} </div>
 
 
     <div _ngcontent-jvq-c3="">
@@ -178,7 +181,9 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
 
 
 
-        <textarea (click)="textInquiry()" [(ngModel)]="data.email" draggable="false"
+        <textarea (click)="textInquiry()" 
+        (keypress)="updatecount()"
+        [(ngModel)]="data.email" draggable="false"
             style="    line-height: 1.2;
             z-index: 1;
             padding: 0px;
@@ -194,7 +199,8 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
             top: 1973.75px;
             left: 22.5px;
             padding-left: 24px;
-            padding-top: 23px;"
+            padding-top: 23px;
+            resize: none;"
             type="text" id="email" placeholder="Inquiry" title="Max 255 Characters"></textarea>
 
     </div>
@@ -208,7 +214,7 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
 
 
 
-        <div *ngIf="hideText" [(ngModel)]="data.email" draggable="false"
+        <div  draggable="false"
             style="    line-height: 1.2;
             z-index: 1;
             padding: 0px;
@@ -221,11 +227,12 @@ top:0px;left:0px;background-repeat: no-repeat; background-attachment: scroll;
             border-radius: 0px;
             width: auto;
             height: auto;
-            top: 2153.75px;
-            left: 260px;
+            top: 2192.75px;
+            left: 274px;
             padding-left: 24px;
-            padding-top: 23px;"
->Max 255 Characters</div>
+            padding-top: 23px;
+            color:white"
+            >Max Characters: 255</div>
 
 
 

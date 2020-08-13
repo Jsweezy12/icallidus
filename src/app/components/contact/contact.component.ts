@@ -22,6 +22,7 @@ export class ContactComponent implements OnInit {
   hideText: boolean = false;
   modal:boolean=false;
   success:boolean=false
+  count:number=255
 ngOnInit() {
   this.prevName = localStorage.getItem("prev");
   this.prev = localStorage.getItem("prevRoute");
@@ -75,6 +76,10 @@ ngOnInit() {
    
 
     
+  }
+
+  updatecount(){
+    this.count = 255 - this.data.notes.length
   }
 
 }
