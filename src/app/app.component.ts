@@ -17,6 +17,7 @@ export class AppComponent {
 resizeSubscription$: Subscription
 previousUrl;
 presentUrl;
+rotate=0
 
 approute;
 
@@ -265,6 +266,20 @@ approute;
           
         }
         
+    }
+
+    if(document.querySelector('.gear1')){
+      if(delta > 0){
+        this.rotate +=1;
+     
+      }else{
+        this.rotate -=1;
+      }
+
+      (<HTMLDivElement>document.querySelector('.gear1')).style.transform=`rotate(${this.rotate}deg)`;
+      (<HTMLDivElement>document.querySelector('.gear2')).style.transform=`rotate(-${this.rotate}deg)`;
+      (<HTMLDivElement>document.querySelector('.gear3')).style.transform=`rotate(-${this.rotate}deg)`;
+      
     }
 
    
