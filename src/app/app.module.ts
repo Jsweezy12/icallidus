@@ -18,7 +18,8 @@ import { DigitTComponent } from './components/digit-t/digit-t.component';
 import { EnterpriseSSComponent } from './components/enterprise-ss/enterprise-ss.component';
 import { DataanalyticsComponent } from './components/dataanalytics/dataanalytics.component';
 import { QuestionsComponent } from './components/questions/questions.component';
-import { EgoveranceComponent } from './components/egoverance/egoverance.component'
+import { EgoveranceComponent } from './components/egoverance/egoverance.component';
+import {SearchJson} from '../modal/serach'
 //import {APP_BASE_HREF} from '@angular/common';
 
 const ROUTES: Routes = [
@@ -65,7 +66,7 @@ const ROUTES: Routes = [
     //RouterModule.forRoot(ROUTES),
     FormsModule
   ],
-  //providers: [{provide: APP_BASE_HREF, useValue: '/'}],
+  providers: [SearchJson],
   bootstrap: [AppComponent]
 })
 export class AppModule {

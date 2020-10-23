@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{WebpateService} from "../../../services/webpate.service";
 import { Router , ActivatedRoute, ParamMap  } from "@angular/router";
+import {SearchJson} from '../../../modal/serach'
 
 @Component({
   selector: 'app-questions',
@@ -9,23 +10,23 @@ import { Router , ActivatedRoute, ParamMap  } from "@angular/router";
 })
 export class QuestionsComponent implements OnInit {
 
-  constructor(private connector: WebpateService, private router:Router) { }
+  constructor(private connector: WebpateService, private router:Router, private searchjson:SearchJson) { }
 
   searchtext;
   res;
   filteredArray=[];
    map={
-    htmlversion2:{name:'HOME PAGE',route:'home'},
-    htmlversion3:{name:'ABOUT US',route:'aboutus'},
-    htmlversion6:{name:'SOLUTIONS PAGE',route:'solutions'},
-    htmlversion7:{name:'SERVICES PAGE',route:'services'},
-    htmlversion11:{name:'APPLICATION MODERNIZATION PAGE',route:'appm'},
-    htmlversion12:{name:'CONTRACT VEHICLES PAGE',route:'contractv'},
-    htmlversion13:{name:'CONTACT PAGE',route:'contact'},
-    htmlversion14:{name:'CAREERS PAGE',route:'careers'},
-    htmlversion15:{name:'DIGITAL TRANSFORMATION PAGE',route:'dt'},
-    htmlversion16:{name:'ENTERPRISE SUPPORT SERVICES PAGE',route:'ess'},
-    htmlversion17:{name:'DATA ANALYTICS PAGE',route:'analytics'}
+    home:{name:'HOME PAGE',route:'home'},
+    aboutus:{name:'ABOUT US',route:'aboutus'},
+    solutions:{name:'SOLUTIONS PAGE',route:'solutions'},
+    services:{name:'SERVICES PAGE',route:'services'},
+    modernization:{name:'APPLICATION MODERNIZATION PAGE',route:'appm'},
+    contractv:{name:'CONTRACT VEHICLES PAGE',route:'contractv'},
+    contact:{name:'CONTACT PAGE',route:'contact'},
+    careers:{name:'CAREERS PAGE',route:'careers'},
+    digital:{name:'DIGITAL TRANSFORMATION PAGE',route:'digital'},
+    enterprise:{name:'ENTERPRISE SUPPORT SERVICES PAGE',route:'enterprise'},
+    analytics:{name:'DATA ANALYTICS PAGE',route:'analytics'}
 
   }
   prev;
@@ -33,22 +34,14 @@ export class QuestionsComponent implements OnInit {
 ngOnInit() {
   this.prevName = localStorage.getItem("prev");
   this.prev = localStorage.getItem("prevRoute");
-    this.connector.allhtml.subscribe(res=>{
-      console.log(res);
-      setTimeout(() => {
-        this.res=res[0];
-        delete this.res.functions
-      }, 500);
-      
-    });
+
   }
   filtersearch(){
-    console.log(this.searchtext,this.res);
-    let keys = Object.keys(this.res);
-    let filtkeys = Object.keys(this.map);
+    console.log(this.searchtext,this.searchjson.searchindex);
+    let keys = Object.keys(this.searchjson.searchindex);
     this.filteredArray = keys.filter(elem=>{
-      if(filtkeys.includes(elem)){
-        return this.res[elem].includes(this.searchtext)
+      if(this.searchjson.searchindex[elem].content.includes(elem)){
+        return elem
       }
       
     })

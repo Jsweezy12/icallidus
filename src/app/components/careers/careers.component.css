@@ -24,3 +24,7 @@
     .mobile{
         display:none 
     }
+
+    .offsite:hover{
+        color:blue !important
+    }
