@@ -43,7 +43,10 @@ approute;
             localStorage.setItem("prev","Enterprise Support Services");
           } else if (this.previousUrl == '/home') {
             localStorage.setItem("prev","");
-          } else {
+          }  else if (this.previousUrl == '/careers') {
+            localStorage.setItem("prev","careers");
+          }
+          else {
             localStorage.setItem("prev",this.jsUcfirst(this.previousUrl.replace('/','')));
           }
         } else if (this.previousUrl == undefined){
@@ -54,6 +57,7 @@ approute;
         if(this.presentUrl != undefined) {
         //  console.log('current:', this.presentUrl.replace('/',''));
           localStorage.setItem("currentRoute",this.presentUrl.replace('/',''));
+          
         //  localStorage.setItem("current",this.jsUcfirst(this.presentUrl.replace('/','')));
         }
       });
@@ -124,6 +128,7 @@ approute;
   headerhtml
   modalhtml
   showmodal:boolean=false
+  showTalent:boolean=false;
   screenWidth:any
   screenHeight:any
   scale ='';
@@ -133,48 +138,19 @@ approute;
 
   showmodalbtngroup;
   ngOnInit(){
-    // window.addEventListener('scroll', (event)=>{
-    //   this.scrollCapture(event)
-    // }, true)
-    // document.querySelector('body').style.overflowY = 'scroll'
     this.screenWidth = document.querySelector('body').clientWidth;
     this.screenHeight = window.innerHeight;
     console.log('screen size oninit',this.screenWidth,this.screenHeight);
     this.SF();
     this.connector.getuibyName('ICALLIS');
-    
-
     this.resizeObservable$ = fromEvent(window, 'resize')
     this.resizeSubscription$ = this.resizeObservable$.subscribe( evt => {
       // Get the Screen Size/ this.screenWidth = evt.currentTarget['innerWidth'];
       this.screenWidth = document.querySelector('body').clientWidth;
         this.SF(); 
     })
+    
    
-      // this.connector.allhtml.subscribe(res=>{
-      //   console.log(res);
-      //   setTimeout(() => {
-      //     // this.navhtml=this.dom.bypassSecurityTrustHtml(res[0].htmlform);
-      //     this.headerhtml= this.dom.bypassSecurityTrustHtml(res[0].htmlversion4);
-      //     this.modalhtml= this.dom.bypassSecurityTrustHtml(res[0].htmlversion5);
-          
-      //   }, 500);
-
-      //   setTimeout(() => {
-     
-        
-
-      //     document.querySelector("#closemodal").addEventListener('click',()=>{
-      //       this.showmodal = false
-      //       document.querySelector('body').style.overflowY = 'scroll'
-      //     });
-
-
-      //   }, 1000);
-        
-      // });
-
-     
 
   }
 
@@ -218,6 +194,24 @@ approute;
     this.scrollast =s;
     console.log(s,this.scrollast,delta);
 
+     //Script to show the Join Talent Pool Bar
+     console.log(localStorage.getItem("currentRoute"))
+     if(localStorage.getItem("currentRoute") === 'careers'){
+       
+        if(s < 100){
+          this.showTalent = false
+        }
+        if(s > 800 * this.scalen){
+          this.showTalent = true
+        }
+
+        if(s > 1800 * this.scalen){
+          this.showTalent = false
+        }
+        
+      
+     }
+    
     if(document.querySelector('#mainpic')){
       if(s > 50){
         this.scrolled = true
@@ -391,7 +385,7 @@ approute;
 }
 
 routeme(routeurl){
-  console.log('routeurl')
+  console.log('routeurl',routeurl)
   this.router.navigate([`/${routeurl}`]);
   this.showmodal = false
 }
