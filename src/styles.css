@@ -202,4 +202,35 @@ a{
 color:rgb(122, 181, 59) !important
 }
 
+.mt-xs{
+    margin-top:2.5px
+}
+
+.mt-s{
+    margin-top:5px
+}
+
+.mt-m{
+    margin-top:20px
+}
+
+.mt-l{
+    margin-top:40px
+}
+
+.mt-xl{
+    margin-top:70px
+}
+
+.mt-xxl{
+    margin-top:140px
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-column{
+    flex-direction: column;
+}
 
